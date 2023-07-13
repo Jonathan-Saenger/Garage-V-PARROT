@@ -30,16 +30,16 @@ class Garage
     #[ORM\Column]
     private ?int $telephone = null;
 
-    #[ORM\OneToMany(mappedBy: 'garage', targetEntity: service::class)]
+    #[ORM\OneToMany(mappedBy: 'garage', targetEntity: Service::class)]
     private Collection $service;
 
-    #[ORM\OneToMany(mappedBy: 'garage', targetEntity: horaire::class)]
+    #[ORM\OneToMany(mappedBy: 'garage', targetEntity: Horaire::class)]
     private Collection $horaire;
 
-    #[ORM\OneToMany(mappedBy: 'garage', targetEntity: temoignage::class)]
+    #[ORM\OneToMany(mappedBy: 'garage', targetEntity: Temoignage::class)]
     private Collection $temoignage;
 
-    #[ORM\OneToMany(mappedBy: 'garage', targetEntity: annonce::class)]
+    #[ORM\OneToMany(mappedBy: 'garage', targetEntity: Annonce::class)]
     private Collection $annonce;
 
     public function __construct()

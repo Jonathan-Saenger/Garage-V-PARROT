@@ -30,10 +30,10 @@ class Employe
     #[ORM\ManyToOne(inversedBy: 'employe')]
     private ?Admin $admin = null;
 
-    #[ORM\ManyToMany(targetEntity: annonce::class)]
+    #[ORM\ManyToMany(targetEntity: Annonce::class)]
     private Collection $annonce;
 
-    #[ORM\ManyToMany(targetEntity: temoignage::class)]
+    #[ORM\ManyToMany(targetEntity: Temoignage::class)]
     private Collection $temoignage;
 
     public function __construct()

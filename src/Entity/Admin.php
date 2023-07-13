@@ -27,13 +27,13 @@ class Admin
     #[ORM\Column(length: 255)]
     private ?string $motdepasse = null;
 
-    #[ORM\OneToMany(mappedBy: 'admin', targetEntity: employe::class)]
+    #[ORM\OneToMany(mappedBy: 'admin', targetEntity: Employe::class)]
     private Collection $employe;
 
-    #[ORM\OneToMany(mappedBy: 'admin', targetEntity: service::class)]
+    #[ORM\OneToMany(mappedBy: 'admin', targetEntity: Service::class)]
     private Collection $service;
 
-    #[ORM\OneToMany(mappedBy: 'admin', targetEntity: horaire::class)]
+    #[ORM\OneToMany(mappedBy: 'admin', targetEntity: Horaire::class)]
     private Collection $horaire;
 
     public function __construct()
