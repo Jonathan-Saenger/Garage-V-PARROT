@@ -2,14 +2,14 @@
 
 namespace App\Controller\Admin;
 
-use App\Entity\Horaire;
+use App\Entity\Garage;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 
-class HoraireCrudController extends AbstractCrudController
+class GarageCrudController extends AbstractCrudController
 {
     public static function getEntityFqcn(): string
     {
-        return Horaire::class;
+        return Garage::class;
     }
 
     /*
@@ -22,5 +22,4 @@ class HoraireCrudController extends AbstractCrudController
         ];
     }
     */
-    
 }
