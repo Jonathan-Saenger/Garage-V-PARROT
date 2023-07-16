@@ -13,8 +13,6 @@ use Symfony\Component\Routing\Annotation\Route;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
-use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
-use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class DashboardController extends AbstractDashboardController
 {
