@@ -5,9 +5,8 @@ namespace App\Controller\Admin;
 use App\Entity\Horaire;
 use Doctrine\DBAL\Types\TimeType;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
-use Symfony\Component\Form\Extension\Core\Type\TimeType as TypeTimeType;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TimeField;
 
 class HoraireCrudController extends AbstractCrudController
 {
@@ -16,15 +15,13 @@ class HoraireCrudController extends AbstractCrudController
         return Horaire::class;
     }
 
-    /*
     public function configureFields(string $pageName): iterable
     {
-        return [
-            IdField::new('id'),
-            TextField::new('title'),
-            TextEditorField::new('description'),
-        ];
+        yield TextField::new('Jour')->setRequired('false');
+        yield TimeField::new('heure_ouverture')->setFormat('HH:mm');
+        yield TimeField::new('heure_fermeture')->setFormat('HH:mm');
+        yield TimeField::new('ouverture_soir')->setFormat('HH:mm');
+        yield TimeField::new('fermeture_soir')->setFormat('HH:mm');
     }
-    */
     
 }

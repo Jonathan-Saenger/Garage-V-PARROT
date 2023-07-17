@@ -31,6 +31,12 @@ class Horaire
     #[ORM\JoinColumn(nullable: false)]
     private ?Garage $garage = null;
 
+    #[ORM\Column(type: Types::TIME_MUTABLE)]
+    private ?\DateTimeInterface $ouverture_soir = null;
+
+    #[ORM\Column(type: Types::TIME_MUTABLE)]
+    private ?\DateTimeInterface $fermeture_soir = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -92,6 +98,30 @@ class Horaire
     public function setGarage(?Garage $garage): static
     {
         $this->garage = $garage;
+
+        return $this;
+    }
+
+    public function getOuvertureSoir(): ?\DateTimeInterface
+    {
+        return $this->ouverture_soir;
+    }
+
+    public function setOuvertureSoir(\DateTimeInterface $ouverture_soir): static
+    {
+        $this->ouverture_soir = $ouverture_soir;
+
+        return $this;
+    }
+
+    public function getFermetureSoir(): ?\DateTimeInterface
+    {
+        return $this->fermeture_soir;
+    }
+
+    public function setFermetureSoir(\DateTimeInterface $fermeture_soir): static
+    {
+        $this->fermeture_soir = $fermeture_soir;
 
         return $this;
     }
