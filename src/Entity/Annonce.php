@@ -56,7 +56,7 @@ class Annonce
 
     #[ORM\Column(nullable: true)]
     private ?int $imageSize = null;
-
+ 
     #[ORM\Column(nullable: true)]
     private ?\DateTimeImmutable $updatedAt = null;
 

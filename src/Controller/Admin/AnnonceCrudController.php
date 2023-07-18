@@ -30,5 +30,4 @@ class AnnonceCrudController extends AbstractCrudController
         yield TextField::new('informationcontact');
         yield TextareaField::new('imageFile')->setFormType(VichImageType::class);
     }
-
 }
