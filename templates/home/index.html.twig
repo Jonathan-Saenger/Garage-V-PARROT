@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!{% endblock %}
+{% block title %}{% endblock %}
 
 {% block body %}
 <style>
@@ -26,19 +26,17 @@
     <h2> Vos témoignages </h2>
 {% endblock %}
 
-{% block footer %}
-
-        <div>
+{% block footer %}<div>
             <h3 class="reseau">Retrouvez-nous sur les réseaux</h3>
                 <ul>
                     <li class="logo_twitter"> 
-                        <a href="#" class=""><img src="my_project_directory/asset/reseaux_sociaux_logo/logo_twitter.png" alt=""></a>
+                        <a href="#" class=""><img src="{{ asset('assets/reseaux_sociaux_logo/logo_twitter.png') }}" alt=""></a>
                     </li>
                     <li class="logo_facebook">
-                        <a href="#"><img src="my_project_directory/asset/reseaux_sociaux_logo/logo_facebook.png" alt=""></a>
+                        <a href="#"><img src="{{ asset('assets/reseaux_sociaux_logo/logo_facebook.png') }}" alt=""></a>
                     </li>
                     <li class="logo_instagram">
-                        <a href="#"><img src="my_project_directory/asset/reseaux_sociaux_logo/logo_instagram.png" alt=""></a>
+                        <a href="#"><img src="{{ asset('assets/reseaux_sociaux_logo/logo_instagram.png') }}" alt=""></a>
                     </li>
                 </ul>
             <h3>Horaires d'ouverture</h3>
@@ -60,6 +58,4 @@
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2639.0531746950905!2d7.688155199999999!3d48.589680699999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4796b7c9d830c9b7%3A0x919606bae971312!2s2%20Rue%20Ettore%20Bugatti%2C%2067201%20Eckbolsheim!5e0!3m2!1sfr!2sfr!4v1688584598119!5m2!1sfr!2sfr" width="231.93" height="172.34" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
         </iframe><br>
         
-        <small>@Copyright | Garage V.Parrot. Tout droit réservé</small>
-
-{% endblock %}
+        <small>@Copyright | Garage V.Parrot. Tout droit réservé</small>{% endblock %}
