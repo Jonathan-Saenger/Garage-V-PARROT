@@ -2,7 +2,7 @@
     text-decoration: none;
 }
 
-/* Header responsive */
+/* Header responsive mobile first */
 .connecter {
     position: absolute;
     right: 15px;
@@ -30,20 +30,52 @@ p {
     text-align: center;
 }
 
-/* Navbar */
-.navbar {
+/* Navbar format mobile */
+nav {
     width: 100%;
-    display: inline-block;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     background-color: #ABB6D0;
     font-family: 'Roboto';
     font-weight: bold;
     text-align: center;
+    transform: translateX(-200%);
+    transition: transform 0,3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+nav.active {
+    transform: translateX(0);
 }
 
 li {
     list-style-type: none;
     color: black;
     padding: 40px;
+}
+
+.menuBurger {
+    width: 90%;
+    margin: auto;
+    height: 50px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ABB6D0;
+    font-family: 'Roboto';
+    font-weight: bold;
+    font-size: 40px;
+    color: black;
+    margin-bottom: 10px;
+}
+
+.fermeture {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 30px;
 }
 
 /* Style des liens format mobile*/
@@ -56,34 +88,9 @@ a:hover {
     color: #0D2459;
 }
 
-/* Navbar format mobile */
-.menuBurger {
-    width: 90%;
-    margin: auto;
-    height: 50px;
-    border-radius: 50PX;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #ABB6D0;
-    font-family: 'Roboto';
-    font-weight: bold;
-    font-size: 40px;
-    color: black;
-    border: solid black;
-    margin-bottom: 10px;
-}
-
-.fermeture {
-    position: absolute;
-    top: 325px;
-    right: 25px;
-    font-size: 40px;
-}
-
-/* Mediaqueries transition format Desktop - Mobile */
+/* Media queries transition format Desktop - Mobile */
 @media screen and (min-width : 850px) and (max-width : 1066px) {
-    .navbar {
+    nav {
         font-size: 10px;
     }
 }
@@ -97,14 +104,14 @@ a:hover {
         width: 100%;
     }
 
-    .navbar {
+    nav {
+        position: relative;
         margin: auto;
-        display: flex;
         align-items: center;
-        justify-content: center;
         width: 85%;
         border-radius: 50px;
         height: 50px;
+        transform: translateX(0);
     }
      
     li {
@@ -140,3 +147,29 @@ a:hover {
     }
 }
 
+/* Footer */
+
+footer {
+
+    margin: auto;
+    width: 85%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    background-color: #0D2459;
+    padding: 20px 35px;
+    font-size: 15px;
+    color: white;
+}
+
+h3 {
+    font-family: "roboto";
+    font-weight:lighter;
+    font-size: 20px;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none; 
+}

@@ -1,15 +1,20 @@
-function menuResponsive() {
-    const ouverture = document.getElementsByClassName('menuBurger');
-    const addMenu = document.getElementsByClassName('navbar');
-    const fermeture = document.getElementsByClassName('fermeture');
+  
+    // Apparition de la Navbar en format mobile
 
-    ouverture.addEventListener('click', () => {
-        addMenu.classList.add('show-nav');
-    })   
+    const openNav = document.querySelector(".menuBurger");
+    const navBar = document.querySelector("nav"); 
+    const closeNav = document.querySelector(".fermeture")
 
-    fermeture.addEventListener('click', () => {
-        addMenu.classList.remove('show-nav');
-    })  
-}
+        openNav.addEventListener('click', apparitionMenu)
 
-menuResponsive(); 
+            function apparitionMenu () {
+                openNav.classList.toggle("active")
+                navBar.classList.toggle("active")
+            }
+
+        closeNav.addEventListener('click', disparitionMenu)
+
+            function disparitionMenu () {
+                navBar.classList.remove("active")
+            }
+
