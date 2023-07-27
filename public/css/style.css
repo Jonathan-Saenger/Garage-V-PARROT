@@ -1,0 +1,59 @@
+/* Style générique */
+* {
+    font-family: "source sans serif";
+    text-decoration: none;
+}
+
+h1 {
+    font-family: "lato regular";
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar */
+
+
+
+
+/* Footer */
+
+footer {
+    background-color: #0D2459;
+    padding: 20px 35px;
+    font-size: 15px;
+    color: white;
+}
+
+h3 {
+    font-family: "roboto";
+    font-weight:lighter;
+    font-size: 20px;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none; 
+}
+
+a,
+a:visited,
+a:active {
+    color: inherit;
+    transition: 0.2s ease;
+}
+a:hover {
+    color: #0D2459;
+    background-color: aliceblue;
+}
+
+img {
+    width: 79.56px;
+    height: 79.56px;
+}
+
+
+
