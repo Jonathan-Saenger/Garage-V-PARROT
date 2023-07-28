@@ -2,6 +2,20 @@
     text-decoration: none;
 }
 
+/* Style des titres du site */ 
+h2 {
+    font-family: "roboto";
+    font-weight: 700;
+    font-size: 35px;
+    color: #0D2459;
+}
+
+h3 {
+    font-family: "roboto";
+    font-weight: 400;
+    font-size: 40px;
+}
+
 /* Header responsive mobile first */
 .connecter {
     position: absolute;
@@ -167,6 +181,10 @@ footer {
     color: white;
 }
 
+footer h3 {
+    font-weight: bold;
+    font-size: 20px;
+}
 /* Espace Réseaux Sociaux */
 
 .reseauxSociaux {
@@ -187,12 +205,6 @@ footer {
 .reseauxSociaux ul li {
     margin: 5px;
     padding: 5px;
-}
-
-h3 {
-    font-family: "roboto";
-    font-weight: "bold";
-    font-size: 20px;
 }
 
 footer img {
