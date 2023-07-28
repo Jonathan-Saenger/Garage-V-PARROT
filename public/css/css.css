@@ -16,6 +16,12 @@ h3 {
     font-size: 40px;
 }
 
+p {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 18px;
+    color: black;
+}
+
 /* Header responsive mobile first */
 .connecter {
     position: absolute;
@@ -36,7 +42,7 @@ h1 {
     line-height: 1px;
 }
 
-p {
+header p {
     font-family: 'Source Sans 3', sans-serif;
     font-style: italic;
     font-size: larger;
@@ -185,6 +191,7 @@ footer h3 {
     font-weight: bold;
     font-size: 20px;
 }
+
 /* Espace Réseaux Sociaux */
 
 .reseauxSociaux {
