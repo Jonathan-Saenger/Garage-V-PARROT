@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Horaires d'ouverture{% endblock %}
+
+{% block body %}
+
+    {% for Horaire in Horaires %}
+        <ul> 
+            <li> 
+                <span>{{ Horaire.jour }}</span>
+            </li>
+            <li>
+                <span>{{ Horaire.heure_ouverture }}</span>
+        </ul>   
+    {% endfor %}
+    
+{% endblock %}
