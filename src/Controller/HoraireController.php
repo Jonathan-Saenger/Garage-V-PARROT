@@ -13,6 +13,7 @@ use Doctrine\Persistence\ManagerRegistry;
 class HoraireController extends AbstractController
 {
     #[Route('/horaire', name: 'app_horaire')]
+    
     public function index(ManagerRegistry $doctrine, HoraireRepository $HoraireRepository): Response
     {
         //appelle des horaires depuis la BDD

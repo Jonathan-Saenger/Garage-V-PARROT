@@ -4,18 +4,23 @@
 
 {% block body %}
 
-<p> Horaires d'ouverture </p>
-   
-    {% for Horaire in Horaires %}
-        
-        <ul class="horaire"> 
-            <li><span>{{ Horaire.jour }}</span> </li>
-            <li><span>{{ Horaire.getHeureOuverture|format_time('short', locale='fr') }}</span></li>
-            <li><span>{{ Horaire.getHeureFermeture|format_time('short', locale='fr') }}</span></li>
-            <li><span>{{ Horaire.getOuvertureSoir|format_time('short', locale='fr') }}</span></li>
-            <li><span>{{ Horaire.getFermetureSoir|format_time('short', locale='fr') }}</span></li>
-        </ul>      
+    <div class="horairebdd">
 
-    {% endfor %}
+        {% for Horaire in Horaires %}
+        <table>
+             <tbody>
+                <tr>
+                <td><span>{{ Horaire.jour }}</span> </td>
+                <td><span>{{ Horaire.getHeureOuverture|format_time('short', locale='fr') }}</span></td>
+                <td><span>{{ Horaire.getHeureFermeture|format_time('short', locale='fr') }}</span></td>
+                <td><span>{{ Horaire.getOuvertureSoir|format_time('short', locale='fr') }}</span></td>
+                <td><span>{{ Horaire.getFermetureSoir|format_time('short', locale='fr') }}</span></td>
+                </tr>
+            </tbody>     
+        </table>
+
+        {% endfor %}
     
+    </div>
+
 {% endblock %}
