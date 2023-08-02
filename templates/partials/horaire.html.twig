@@ -3,24 +3,33 @@
 {% block title %}Horaires d'ouverture{% endblock %}
 
 {% block body %}
-
-    <div class="horairebdd">
-
-        {% for Horaire in Horaires %}
-        <table>
-             <tbody>
-                <tr>
-                <td><span>{{ Horaire.jour }}</span> </td>
-                <td><span>{{ Horaire.getHeureOuverture|format_time('short', locale='fr') }}</span></td>
-                <td><span>{{ Horaire.getHeureFermeture|format_time('short', locale='fr') }}</span></td>
-                <td><span>{{ Horaire.getOuvertureSoir|format_time('short', locale='fr') }}</span></td>
-                <td><span>{{ Horaire.getFermetureSoir|format_time('short', locale='fr') }}</span></td>
-                </tr>
-            </tbody>     
-        </table>
-
-        {% endfor %}
-    
-    </div>
-
+    {% for Horaire in Horaires %}
+        {% if Horaire.getOuvertureSoir is not null %}
+            <table>
+                <tbody>
+                    <tr>
+                        <td> {{ Horaire.jour }}  </td>
+                        <td>  :  </td>
+                        <td>{{ Horaire.getHeureOuverture|format_time('short', locale='fr') }}</td>
+                        <td> -  </td>
+                        <td>{{ Horaire.getHeureFermeture|format_time('short', locale='fr') }}</td>
+                        <td> ,  </td>
+                        <td>{{ Horaire.getOuvertureSoir|format_time('short', locale='fr') }}</td>
+                        <td> -  </td>
+                        <td>{{ Horaire.getFermetureSoir|format_time('short', locale='fr') }}</td>
+                    </tr>
+                </tbody>   
+            </table>      
+        {% else %}  
+                <table>
+                <tbody>
+                    <tr>
+                        <td> {{ Horaire.jour }}  </td>
+                        <td>  :  </td>
+                        <td> <span> Fermé </span> <td>
+                    </tr>
+                </tbody>   
+            </table>  
+        {% endif %}
+    {% endfor %}
 {% endblock %}

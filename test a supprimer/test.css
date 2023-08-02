@@ -1,0 +1,48 @@
+h2 {
+    font-family: "roboto";
+    font-weight: 700;
+    font-size: 35px;
+    color: #0D2459;
+    text-align: center;
+}
+
+/* Rubrique Qui sommes-nous ? */
+.bloc {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.bloc .bloc-img img {
+    width: 100%;
+}
+
+.bloc .text-bloc {
+    background-color: #ABB6D0;
+    font-size: 25px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: justify;
+}
+
+.bloc-img .text-bloc {
+    margin: 0;
+    padding: 0;
+}
+
+@media screen and (min-width : 1000px) {
+    .bloc {
+        flex-wrap: nowrap;
+        flex-direction: row;
+        align-items: center;
+        flex-grow: 1;
+    }
+    
+    .bloc .bloc-img img {
+
+    }
+
+    .bloc .bloc-text {
+
+    }
+}

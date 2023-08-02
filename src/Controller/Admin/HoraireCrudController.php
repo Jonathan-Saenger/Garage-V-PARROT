@@ -4,12 +4,8 @@ namespace App\Controller\Admin;
 
 
 use App\Entity\Horaire;
-use Symfony\Component\Form\ChoiceList\ChoiceList;
-use EasyCorp\Bundle\EasyAdminBundle\Field\DateField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TimeField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
-use Symfony\Bundle\FrameworkBundle\Console\Descriptor\TextDescriptor;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 
 class HoraireCrudController extends AbstractCrudController
