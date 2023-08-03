@@ -173,6 +173,59 @@ a:hover {
     }
 }
 
+/* Rubrique Qui sommes-nous ? */
+.bloc {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width : 100%;
+}
+
+.bloc .bloc-img img {
+    width: 100%;
+}
+
+.bloc .text-bloc {
+    background-color: #ABB6D0;
+    font-size: 25px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: justify;
+}
+
+.bloc-img .text-bloc p {
+    margin: 0;
+    padding-top: 0;
+    width : 100%; 
+}
+
+@media screen and (min-width : 1000px) {
+    .bloc .text-bloc h2 {
+        font-family: "roboto";
+        font-weight: 600;
+        font-size: 35px;
+        color: #0D2459;
+        text-align: center;
+    }
+
+    .bloc {
+        flex-wrap: nowrap;
+        flex-direction: row;
+        align-items: stretch;
+    }
+    
+    .bloc .bloc-img  {
+        flex: 1; 
+        order: 2; 
+    }
+
+    .bloc .text-bloc {
+        flex: 1; 
+        order: 1; 
+        font-size: clamp(0.938rem, 2.094vw + -0.371rem, 2.188rem);
+    }
+}
+
 /* Footer */
 
 footer {

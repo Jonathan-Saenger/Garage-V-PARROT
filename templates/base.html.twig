@@ -17,9 +17,15 @@
 
     <body>
 
+        {% block header %}
         {% include "partials/header.html.twig" %}
-            {% block body %}{% endblock %}
+        {% endblock %}
+
+        {% block body %}{% endblock %}
+
+        {% block footer %}
         {%include "partials/footer.html.twig" %}
+        {% endblock %}
 
         {% block javascripts %} <script src="{{ asset('javascript/script.js') }}"></script> {% endblock %}
     

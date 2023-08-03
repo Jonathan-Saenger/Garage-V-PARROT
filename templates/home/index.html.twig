@@ -2,25 +2,22 @@
 
 
 {% block body %}
-<img class="image" src="{{ asset('images/generiques/entete.png') }}" alt="Image d'un mécanicien du Garage V.Parrot">  
 
-  <h2> Qui sommes-nous ? </h2>
-  <h2> Découvrez nos services </h2>
-      <h3> Pneus et roues </h3>
-      <h3> Disques et plaquettes </h3>
-      <h3> Vidanges et entretien </h3>
-      <h3> Boite de vitesse </h3>
-      <h3> Echappement </h3>
-      <h3> Diagnostic automobile </h3>
-
-    <h2> Opportunité à saisir </h2>
-
-    <h2> Vos témoignages </h2>
-
-     
-    
-{% endblock %}
-
-{% block footer %}
+  <img class="image" src="{{ asset('images/generiques/entete.png') }}" alt="Image d'un mécanicien du Garage V.Parrot">  
+    <div class="bloc">
+        <div class="bloc-img">
+        <img src="{{ asset('images/generiques/quisommesnous.jpg') }}" alt="Image de présentation du garage">
+        </div> 
+        <div class="text-bloc">
+          <h2> QUI SOMMES-NOUS ? </h2>
+          <p> Nous sommes bien plus qu’un simple garage, nous sommes une équipe passionnée, qualifiée et dévouée à offrire un service exceptionnel.<br>
+          En tant qu’entreprise établie dans le bassin alsacien depuis plus de 20 ans, nous bénéficions d’une solide réputation basée sur notre 
+          expertise. Nous avons construit des relations durables avec nos clients grâce à des valeurs qui nous sont chères : transparence, honnêteté 
+          et professionnalisme.<br>
+          Vincent PARROT et toute son équipe vous souhaite la bienvenue !</p>
+        </div>
+      <div>
 
 {% endblock %}
+
+
