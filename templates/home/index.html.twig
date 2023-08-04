@@ -3,21 +3,37 @@
 
 {% block body %}
 
-  <img class="image" src="{{ asset('images/generiques/entete.png') }}" alt="Image d'un mécanicien du Garage V.Parrot">  
-    <div class="bloc">
-        <div class="bloc-img">
-        <img src="{{ asset('images/generiques/quisommesnous.jpg') }}" alt="Image de présentation du garage">
-        </div> 
-        <div class="text-bloc">
+  <img class="image-principale" src="{{ asset('images/generiques/entete.png') }}" alt="Image d'un mécanicien du Garage V.Parrot">  
+  
+    <article class="bloc">
+      <img class="image" src="{{ asset('images/generiques/quisommesnous.jpg') }}" alt="Image de présentation du garage">
+      <div class="text-bloc">
           <h2> QUI SOMMES-NOUS ? </h2>
           <p> Nous sommes bien plus qu’un simple garage, nous sommes une équipe passionnée, qualifiée et dévouée à offrire un service exceptionnel.<br>
           En tant qu’entreprise établie dans le bassin alsacien depuis plus de 20 ans, nous bénéficions d’une solide réputation basée sur notre 
           expertise. Nous avons construit des relations durables avec nos clients grâce à des valeurs qui nous sont chères : transparence, honnêteté 
-          et professionnalisme.<br>
+          et professionnalisme.<br><br>
           Vincent PARROT et toute son équipe vous souhaite la bienvenue !</p>
-        </div>
-      <div>
+      </div>
+  </article>
+
+      <article class="blocservice">
+      <img class="imageservice" src="{{ asset('images/generiques/nosservices.jpg') }}" alt="Les services du Garage V Parrot">
+      <div class="textservice-bloc">
+          <h2> DECOUVREZ NOS SERVICES </h2>
+          <p> Qu'il s'agisse d'une simple vidange d'huile, d'une réparation 
+          mécanique complexe ou même d'une rénovation complète, 
+          nous sommes équipés pour prendre en charge toutes les 
+          réparations nécessaires. Faites-nous confiance et laissez-nous 
+          prendre soin de votre véhicule avec expertise 
+          et professionnalisme. Tous les véhicules sont pris en charge avec soin
+          par nos équipes.</p><br>
+          <button href=""{{path ('app_services')}}"">NOS SERVICES<button>
+      </div>
+  </article>
 
 {% endblock %}
+
+
 
 

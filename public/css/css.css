@@ -8,6 +8,7 @@ h2 {
     font-weight: 700;
     font-size: 35px;
     color: #0D2459;
+    text-align: center;
 }
 
 h3 {
@@ -125,7 +126,7 @@ a:hover {
         display: none;
     }
 
-    .image {
+    .image-principale {
         width: 100%;
     }
 
@@ -168,24 +169,24 @@ a:hover {
 }
 
 @media screen and (max-width : 850px) {
-    .image {
+    .image-principale {
         display: none;
     }
 }
 
-/* Rubrique Qui sommes-nous ? */
+/* Rubrique Qui sommes-nous ? & Découvrez nos services */
 .bloc {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    width : 100%;
+    width : auto;
 }
 
-.bloc .bloc-img img {
+article img {
     width: 100%;
 }
 
-.bloc .text-bloc {
+.text-bloc {
     background-color: #ABB6D0;
     font-size: 25px;
     padding-left: 10px;
@@ -193,14 +194,18 @@ a:hover {
     text-align: justify;
 }
 
-.bloc-img .text-bloc p {
+.textservice-bloc {
+    text-align: justify;
+}
+
+.text-bloc p {
     margin: 0;
     padding-top: 0;
     width : 100%; 
 }
 
-@media screen and (min-width : 1000px) {
-    .bloc .text-bloc h2 {
+@media screen and (min-width : 900px) {
+    article .text-bloc h2 {
         font-family: "roboto";
         font-weight: 600;
         font-size: 35px;
@@ -209,21 +214,80 @@ a:hover {
     }
 
     .bloc {
-        flex-wrap: nowrap;
-        flex-direction: row;
-        align-items: stretch;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction:row-reverse;
+        width: 100%;
     }
     
-    .bloc .bloc-img  {
-        flex: 1; 
-        order: 2; 
+    .bloc img {
+        flex : 0 0 40%;
+        position: relative;
+        display: block;
+        max-width: 40%;
     }
 
     .bloc .text-bloc {
-        flex: 1; 
-        order: 1; 
+        flex: 1;
+        padding: 10px;
         font-size: clamp(0.938rem, 2.094vw + -0.371rem, 2.188rem);
     }
+}
+
+/* Mediaqueries Nos services */
+
+@media screen and (min-width : 900px) {
+    .blocservice {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction:row;
+        width: 100%;
+    }
+    
+    article .blocservice {
+        flex-direction: row;
+
+    }
+    
+    article .imageservice {
+        flex : 0 0 40%;
+        position: relative;
+        display: block;
+        max-width: 40%;
+    }
+
+    article .textservice-bloc {
+        flex: 1;
+        padding-left: 25px;
+        padding-right: 25px;
+        text-align: justify;
+        font-size: clamp(0.938rem, 2.094vw + -0.371rem, 2.188rem);
+    }
+}
+
+/* Bouton */
+
+button {
+    text-align: center;
+	background-color:#0d2459;
+	border-radius: 28px;
+	border: 1px solid black;
+	display: inline-block;
+	cursor: pointer;
+	color:#ffffff;
+	font-family: Roboto;
+	font-size:25px;
+	font-weight:bold;
+	padding: 8px 27px;
+	text-decoration: none;
+	text-shadow:1px 1px 1px white;
+}
+button:hover {
+	background-color:#334471;
+}
+button:active {
+	position: relative;
+	top:5px;
 }
 
 /* Footer */
@@ -307,4 +371,3 @@ footer img {
         padding-right: 10px;
     }
 }
-

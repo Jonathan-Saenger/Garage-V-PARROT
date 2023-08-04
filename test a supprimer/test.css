@@ -14,7 +14,7 @@
     width : 100%;
 }
 
-.bloc .bloc-img img {
+img {
     width: 100%;
 }
 
@@ -26,13 +26,13 @@
     text-align: justify;
 }
 
-.bloc-img .text-bloc p {
+.text-bloc p {
     margin: 0;
     padding-top: 0;
     width : 100%; 
 }
 
-@media screen and (min-width : 1000px) {
+@media screen and (min-width : 900px) {
     .bloc .text-bloc h2 {
         font-family: "roboto";
         font-weight: 600;
@@ -42,19 +42,21 @@
     }
 
     .bloc {
-        flex-wrap: nowrap;
+        display: flex;
+        flex-wrap: wrap;
         flex-direction: row;
-        align-items: stretch;
+        width: 100%;
     }
     
-    .bloc .bloc-img  {
-        flex: 1; 
-        order: 2; 
+    .bloc img {
+        object-fit: cover;
+        flex: 1 1 300px;
+        max-width: 50%;
     }
 
     .bloc .text-bloc {
-        flex: 1; 
-        order: 1; 
+        padding: min(2rem, 5vw) min(2rem, 5vw) min(2.5rem, 5vw);
+        flex: 1 0 50%;
         font-size: clamp(0.938rem, 2.094vw + -0.371rem, 2.188rem);
     }
 }
