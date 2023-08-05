@@ -15,9 +15,9 @@
           et professionnalisme.<br><br>
           Vincent PARROT et toute son équipe vous souhaite la bienvenue !</p>
       </div>
-  </article>
+    </article>
 
-      <article class="blocservice">
+    <article class="blocservice">
       <img class="imageservice" src="{{ asset('images/generiques/nosservices.jpg') }}" alt="Les services du Garage V Parrot">
       <div class="textservice-bloc">
           <h2> DECOUVREZ NOS SERVICES </h2>
@@ -27,10 +27,26 @@
           réparations nécessaires. Faites-nous confiance et laissez-nous 
           prendre soin de votre véhicule avec expertise 
           et professionnalisme. Tous les véhicules sont pris en charge avec soin
-          par nos équipes.</p><br>
-          <button href=""{{path ('app_services')}}"">NOS SERVICES<button>
+          par nos équipes.</p>
+          <center><a class="bouton" href="{{path ('app_services')}}">NOS SERVICES</a></center>
       </div>
-  </article>
+    </article>
+
+    {# Insérer ici la suite avec les cartes des annonces depuis la BDD div #}
+
+    <article class="bloc">
+      <img class="image" src="{{ asset('images/generiques/occasions.jpg') }}" alt="Image des véhicules d'occasions">
+      <div class="text-bloc">
+          <h2> OPPORTUNITES A SAISIR </h2>
+          <p> Découvrez notre sélection de véhicules d’occasion de haute 
+          qualité à des prix irrésistibles ! Nous sommes fiers de vous 
+          offrir une gamme variée de voiture d’occasion rigoureusement 
+          inspéctées pour garantir leur fiabilité, leur performance et 
+          leur sécurité. Faites confiance à notre expertise et trouvez le 
+          véhicule idéal qui correspond à votre style et à votre budget. </p>
+          <center><a class="bouton" href="{{path ('app_vehicules')}}">NOS VEHICULES D'OCCASION</a></center>
+      </div>
+    </article>
 
 {% endblock %}
 

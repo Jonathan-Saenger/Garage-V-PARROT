@@ -267,11 +267,10 @@ article img {
 
 /* Bouton */
 
-button {
-    text-align: center;
+article div .bouton {
 	background-color:#0d2459;
 	border-radius: 28px;
-	border: 1px solid black;
+	border: 1px solid white;
 	display: inline-block;
 	cursor: pointer;
 	color:#ffffff;
@@ -280,12 +279,14 @@ button {
 	font-weight:bold;
 	padding: 8px 27px;
 	text-decoration: none;
-	text-shadow:1px 1px 1px white;
 }
-button:hover {
-	background-color:#334471;
+
+article div .bouton:hover {
+	background-color:white;
+    color: #0D2459;
+    border: 1px solid #334471;
 }
-button:active {
+article div .bouton:active {
 	position: relative;
 	top:5px;
 }
