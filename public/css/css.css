@@ -416,8 +416,11 @@ footer img {
         flex-wrap: wrap; 
         flex-direction: row;
         align-items: center;
-        
-
-     
+        margin-left: 9%;
+        margin-right: 9%;
      }
+}
+
+.pagination .first, .last {
+    display: none;
 }

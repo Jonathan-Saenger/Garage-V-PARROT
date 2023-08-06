@@ -28,11 +28,24 @@
           prendre soin de votre véhicule avec expertise 
           et professionnalisme. Tous les véhicules sont pris en charge avec soin
           par nos équipes.</p>
-          <center><a class="bouton" href="{{path ('app_services')}}">NOS SERVICES</a></center>
+          <center><a class="bouton" href="{{path ('app_services')}}">TOUS NOS SERVICES</a></center>
       </div>
     </article>
-
-    {# Insérer ici la suite avec les cartes des annonces depuis la BDD div #}
+    {# Insérer ici la suite avec les cartes des annonces à paginer depuis la BDD div #}
+    <div class="carte">
+      {% for Service in Pagination %}
+          <article class="carte-service">
+              <img class="imageFile" src="{{ vich_uploader_asset(Service,'imageFile') }}" alt="Nos services, notre profesionnalisme">
+              <div class="carte-texte">
+                  <h3 class="carte-titre"> {{ Service.getTitre() }} </h3>
+                  <p class="carte-description"> {{ Service.getDescription() }}</p>
+                  <center><a class="bouton" href="{{path ('app_services')}}">RENDEZ-VOUS</a></center>
+                  <center><a class="bouton" href="{{path ('app_services')}}">DEVIS GRATUIT</a></center>
+              </div>
+          </article>
+      {% endfor %}
+      {{ knp_pagination_render(Pagination) }}
+    </div>
 
     <article class="bloc">
       <img class="image" src="{{ asset('images/generiques/occasions.jpg') }}" alt="Image des véhicules d'occasions">

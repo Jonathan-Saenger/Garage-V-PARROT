@@ -5,20 +5,36 @@
 {% block body %}
 
 <h2> Témoignages </h2>
+<center><p> Votre satisfaction, notre priorité !<p></center>
 
-<p> Votre satisfaction, notre priorité !</p>
-{#<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+<form action="" method="POST" class="form-temoignage">
+    <label for="name">Nom et prénom : </label><br>
+    <input type="text" name="name" id="name" required/> <br>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <label for="mail">E-mail : </label><br>
+    <input type="text" name="mail" id="mail" required/><br>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/Users/Jonathan/OneDrive/Bureau/Garage V Parrot/src/Controller/TemoignagesController.php'|file_link(0) }}">src/Controller/TemoignagesController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/Users/Jonathan/OneDrive/Bureau/Garage V Parrot/templates/temoignages/index.html.twig'|file_link(0) }}">templates/temoignages/index.html.twig</a></code></li>
-    </ul>
-</div>#}
+    <span> Note : </span><br>
+        <div class="Galaxie">
+            <div class="Boite-etoiles">
+                <input type="radio" id="note1" name="radio" value="note"/>
+                <label for="note1" class="etoile"> 1 </label>
+                <input type="radio" id="note2" name="radio" value="note" />
+                <label for="note2" class="etoile"> 2 </label>
+                <input type="radio" id="note3" name="radio" value="note" />
+                <label for="note3" class="etoile"> 3 </label>
+                <input type="radio" id="note4" name="radio" value="note" />
+                <label for="note3" class="etoile"> 4 </label>
+                <input type="radio" id="note5" name="radio" value="note" />
+                <label for="note3" class="etoile"> 5 </label> <br>
+            <div>
+        </div>   
+    <label for="commentaire"> Commentaire  : </label><br>
+    <input type="textarea" name="commentaire" id="commentaire" required/> <br>
+
+    <button type="submit">Envoyer</button>
+
+</form>
+
+
 {% endblock %}
