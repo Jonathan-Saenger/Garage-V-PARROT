@@ -27,7 +27,7 @@ class AnnonceCrudController extends AbstractCrudController
         yield NumberField::new('prix');
         yield NumberField::new('annee');
         yield NumberField::new('kilometrage');
-        yield TextField::new('informationcontact');
+        //yield TextField::new('informationcontact');
         yield TextareaField::new('imageFile')->setFormType(VichImageType::class);
     }
 }

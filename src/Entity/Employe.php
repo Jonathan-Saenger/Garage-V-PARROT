@@ -22,10 +22,10 @@ class Employe
     private ?string $nom = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $mail = null;
+    private ?string $email = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $motdepasse = null;
+    private ?string $password = null;
 
     #[ORM\ManyToOne(inversedBy: 'employe')]
     private ?Admin $admin = null;
@@ -71,26 +71,26 @@ class Employe
         return $this;
     }
 
-    public function getMail(): ?string
+    public function getEmail(): ?string
     {
-        return $this->mail;
+        return $this->email;
     }
 
-    public function setMail(string $mail): static
+    public function setEmail(string $email): static
     {
-        $this->mail = $mail;
+        $this->email = $email;
 
         return $this;
     }
 
-    public function getMotdepasse(): ?string
+    public function getPassword(): ?string
     {
-        return $this->motdepasse;
+        return $this->password;
     }
 
-    public function setMotdepasse(string $motdepasse): static
+    public function setPassword(string $password): static
     {
-        $this->motdepasse = $motdepasse;
+        $this->password = $password;
 
         return $this;
     }
