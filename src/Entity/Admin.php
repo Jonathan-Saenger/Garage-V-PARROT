@@ -36,11 +36,15 @@ class Admin
     #[ORM\OneToMany(mappedBy: 'admin', targetEntity: Horaire::class)]
     private Collection $horaire;
 
+    #[ORM\OneToMany(mappedBy: 'category', targetEntity: User::class)]
+    private Collection $users;
+
     public function __construct()
     {
         $this->employe = new ArrayCollection();
         $this->service = new ArrayCollection();
         $this->horaire = new ArrayCollection();
+        $this->users = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -180,6 +184,36 @@ class Admin
             // set the owning side to null (unless already changed)
             if ($horaire->getAdmin() === $this) {
                 $horaire->setAdmin(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, User>
+     */
+    public function getUsers(): Collection
+    {
+        return $this->users;
+    }
+
+    public function addUser(User $user): static
+    {
+        if (!$this->users->contains($user)) {
+            $this->users->add($user);
+            $user->setCategory($this);
+        }
+
+        return $this;
+    }
+
+    public function removeUser(User $user): static
+    {
+        if ($this->users->removeElement($user)) {
+            // set the owning side to null (unless already changed)
+            if ($user->getCategory() === $this) {
+                $user->setCategory(null);
             }
         }
 
