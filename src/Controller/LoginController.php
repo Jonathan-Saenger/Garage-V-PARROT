@@ -20,4 +20,8 @@ class LoginController extends AbstractController
             'error' => $error,
         ]);
     }
+
+    #[Route('déconnexion', name: 'app_logout')]
+    public function logout() {
+    }
 }
