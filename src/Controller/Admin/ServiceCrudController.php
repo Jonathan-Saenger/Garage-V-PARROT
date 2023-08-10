@@ -18,9 +18,8 @@ class ServiceCrudController extends AbstractCrudController
     
     public function configureFields(string $pageName): iterable
     {
-        yield TextField::new('titre');
-        yield TextareaField::new('description');
-        yield TextareaField::new('imageFile')->setFormType(VichImageType::class);
+        yield TextField::new('titre')->setPermission('ROLE_ADMIN');
+        yield TextareaField::new('description')->setPermission('ROLE_ADMIN');
+        yield TextareaField::new('imageFile')->setFormType(VichImageType::class)->setPermission('ROLE_ADMIN');
     }
-    
 }

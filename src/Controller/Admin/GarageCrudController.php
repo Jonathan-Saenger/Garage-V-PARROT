@@ -12,6 +12,7 @@ class GarageCrudController extends AbstractCrudController
         return Garage::class;
     }
 
+
     /*
     public function configureFields(string $pageName): iterable
     {
