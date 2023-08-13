@@ -4,12 +4,14 @@ namespace App\Controller\Admin;
 
 use App\Entity\User;
 use PhpParser\Node\Expr\Cast\Array_;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
+use Symfony\Component\Validator\Constraints\NotNull;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ArrayField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
-use Symfony\Component\Validator\Constraints\NotNull;
-use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 
 class UserCrudController extends AbstractCrudController
 {
@@ -25,5 +27,10 @@ class UserCrudController extends AbstractCrudController
         yield TextField::new('Email')->setPermission('ROLE_ADMIN');
         yield TextField::new('Password')->setPermission('ROLE_ADMIN');
         yield ChoiceField::new('roles')->setChoices(array_combine($roles, $roles))->allowMultipleChoices()->renderExpanded()->renderAsBadges()->setPermission('ROLE_ADMIN');
+    }
+
+    public function configureActions(Actions $actions): Actions
+    {
+        return parent::configureActions($actions)->setPermission(Action::INDEX, 'ROLE_ADMIN');
     }
 }

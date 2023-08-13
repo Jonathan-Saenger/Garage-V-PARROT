@@ -1,5 +1,10 @@
  <header>
-    <p><a class="connecter" href="{{path ('app_login')}}">Se connecter</a></p>
+   {% if is_granted('ROLE_ADMIN') or is_granted('ROLE_USER') %}
+        <p><a class="connecter" href="{{path ('admin')}}">Panneau d'administration</a></p>
+    {% else %}
+        <p><a class="connecter" href="{{path ('app_login')}}">Se connecter</a></p>
+    {% endif %}
+
     <img class="logo" src="{{ asset('images/generiques/Logo.png') }}" alt="Logo Garage V.Parrot">
     <h1> GARAGE V. PARROT </h1>
     <p> Réparations fiables, voitures d'occasion exceptionnelles </p>  

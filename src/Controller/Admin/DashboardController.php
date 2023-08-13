@@ -58,5 +58,6 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Service', 'fas fa-car-on', Service::class)->setPermission('ROLE_ADMIN');
         yield MenuItem::linkToCrud('Temoignage', 'fas fa-comment', Temoignage::class);
         yield MenuItem::linkToCrud('Garage', 'fas fa-store', Garage::class)->setPermission('ROLE_ADMIN');
+        yield MenuItem::linkToUrl('Retour sur le site', 'fas fa-home', $this->generateUrl('app_home'));
     }
 }

@@ -191,6 +191,7 @@ article img {
     font-size: 25px;
     text-align: justify;
     padding: 10px;
+    padding-left: 30px;
 }
 
 .textservice-bloc {
@@ -423,4 +424,17 @@ footer img {
 
 .pagination .first, .last {
     display: none;
+}
+
+/* Formulaire de connexion */
+
+.bloclogin {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    text-align: center;
+    justify-content: center;
+}
+.emaillabel {
+
 }

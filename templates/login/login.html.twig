@@ -1,23 +1,93 @@
 {#{% extends 'base.html.twig' %}#}
 
-{% block title %}Hello LoginController!{% endblock %}
 
 {% block body %}
+    
     {% if error %}
         <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
     {% endif %}
 
-    <form action="{{ path('app_login') }}" method="post">
-        <label for="username">Email:</label>
-        <input type="text" id="username" name="_username" value="{{ last_username }}">
+    <div class="bloclogin">
+        <img class="logo" src="{{ asset('images/generiques/Logo.png') }}" alt="Logo Garage V.Parrot">
+        <h1> LOGIN </h1>
+        <form action="{{ path('app_login') }}" method="post">
+            <label class:"emaillabel" for="username"></label><br>
+            <input type="text" id="username" name="_username" placeholder="Adresse email" value="{{ last_username }}"><br>
 
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="_password">
+            <label for="password"></label>
+            <input type="password" id="password" name="_password" placeholder="Mot de passe"><br>
+            <input type="hidden" name="/admin" value="/account"> 
 
-        
-        <input type="hidden" name="/admin" value="/account"> 
+            <button class="boutonlogin" type="submit"> Connexion </button>
+            <center><a class="bouton" href="{{path ('app_login')}}">Mot de passe oublié ?</a></center>
+        </form>
+    </div>
 
-        <button type="submit">login</button>
-    </form>
+    <style>
+    
+    div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: auto;
+        text-align: center;
+    }
+
+    h1 {
+    color: #334471;
+    text-align: center;
+    line-height: 1px;
+    }
+
+    input::placeholder {
+     text-align: center;
+    }
+
+    input {
+        margin: auto;
+        height: 50px;
+        border-radius: 50px;
+        border: 1px solid black;
+        background-color: #ABB6D0;
+        font-family: 'Roboto';
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .boutonlogin {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    background-color:#0d2459;
+	border-radius: 28px;
+	border: 1px solid white;
+	cursor: pointer;
+	color:#ffffff;
+	font-family: Roboto;
+	font-size:25px;
+	font-weight:bold;
+	padding: 8px 27px;
+	text-decoration: none;
+    }
+
+    .boutonlogin:hover {
+	background-color:white;
+    color: #0D2459;
+    border: 1px solid #334471;
+    }
+
+    .boutonlogin:active {
+	position: relative;
+	top: 5px;
+    }
+
+    a {
+        text-decoration: none;
+        color: black;
+    }
+
+
+
+    </style>
 
 {% endblock %}
