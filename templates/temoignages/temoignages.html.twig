@@ -7,34 +7,43 @@
 <h2> Témoignages </h2>
 <center><p> Votre satisfaction, notre priorité !<p></center>
 
-<form action="" method="POST" class="form-temoignage">
-    <label for="name">Nom et prénom : </label><br>
-    <input type="text" name="name" id="name" required/> <br>
+    <div class="temoignage">
+        <form action="" method="POST" class="form-temoignage">
 
-    <label for="mail">E-mail : </label><br>
-    <input type="text" name="mail" id="mail" required/><br>
+            <div class="champ">
+                <div class="div1">
+                    <label for="name"> Nom et prénom : </label><br>
+                    <input class="textinput" type="text" placeholder="Vincent Parrot" name="name" id="name" required/> <br>
+                </div>
+                <div class="div2">
+                    <label for="mail"> E-mail : </label><br>
+                    <input class="textinput" type="text" placeholder="exemple@exemple.fr" name="mail" id="mail" required/><br>
+                </div>
+            </div>
 
-    <span> Note : </span><br>
-        <div class="Galaxie">
-            <div class="Boite-etoiles">
-                <input type="radio" id="note1" name="radio" value="note"/>
-                <label for="note1" class="etoile"> 1 </label>
-                <input type="radio" id="note2" name="radio" value="note" />
-                <label for="note2" class="etoile"> 2 </label>
-                <input type="radio" id="note3" name="radio" value="note" />
-                <label for="note3" class="etoile"> 3 </label>
-                <input type="radio" id="note4" name="radio" value="note" />
-                <label for="note3" class="etoile"> 4 </label>
-                <input type="radio" id="note5" name="radio" value="note" />
-                <label for="note3" class="etoile"> 5 </label> <br>
-            <div>
-        </div>   
-    <label for="commentaire"> Commentaire  : </label><br>
-    <input type="textarea" name="commentaire" id="commentaire" required/> <br>
+            <span class="note"> Note : </span><br>
+            <div class="galaxie">
+                <div class="boite-etoiles">
+                    <input type="radio" id="note1" name="radio" value="note"/>
+                    <label for="note1" class="etoile"> &#9733; </label>
+                    <input type="radio" id="note2" name="radio" value="note" />
+                    <label for="note2" class="etoile"> &#9733; </label>
+                    <input type="radio" id="note3" name="radio" value="note" />
+                    <label for="note3" class="etoile"> &#9733; </label>
+                    <input type="radio" id="note4" name="radio" value="note" />
+                    <label for="note4" class="etoile"> &#9733; </label>
+                    <input type="radio" id="note5" name="radio" value="note" />
+                    <label for="note5" class="etoile"> &#9733; </label> <br>
+                </div>
+            </div>  
 
-    <button type="submit">Envoyer</button>
+            <label for="commentaire"> Message : </label><br>
+            <textarea class="textarea" name="commentaire" id="commentaire" placeholder="Merci pour votre commentaire" required> </textarea><br>
+            
+            <button class="boutonenvoyer" type="submit">Envoyer</button>
+        </form>
+    </div>
 
-</form>
-
+     <img class="merci" src="{{ asset('images/generiques/Merci.jpg') }}" alt="Merci pour votre témoignage !">
 
 {% endblock %}

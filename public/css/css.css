@@ -426,15 +426,164 @@ footer img {
     display: none;
 }
 
-/* Formulaire de connexion */
+/* Témoignages */
 
-.bloclogin {
+label, .note {
+color : #0D2459;
+}
+
+.temoignage {
     display: flex;
-    flex-direction: column;
-    margin: auto;
-    text-align: center;
     justify-content: center;
 }
-.emaillabel {
 
+.div1, .div2 {
+    width: 350px;
+}
+
+.galaxie {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+
+.textinput {
+    margin-top: 10px;
+    width: 100%;
+    height: 30px;
+    border-radius: 50px;
+    border: 1px solid black;
+    background-color: #ABB6D0;
+    font-family: 'Roboto';
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.textarea {
+    margin: 10px;
+    width: 100%;
+    height: 100px;
+    border-radius: 20px;
+    border: 1px solid black;
+    background-color: #ABB6D0;
+    font-family: 'Roboto';
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.boutonenvoyer {
+    float: right;
+    margin-bottom: 10px;
+    background-color:#0d2459;
+	border-radius: 28px;
+	border: 1px solid white;
+	cursor: pointer;
+	color:#ffffff;
+	font-family: Roboto;
+	font-size:25px;
+	padding: 8px 27px;
+	text-decoration: none;
+    }
+
+.merci {
+    width: 100%;
+}
+
+/*.boite-etoiles {
+    display: inline-block;
+    font-size: 0;  Pour supprimer l'espace entre les étoiles 
+    }*/
+    
+    .boite-etoiles input {
+    display: none;
+    }
+    
+    .boite-etoiles label {
+    font-size: 50px;
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.3s;
+    }
+    
+    .boite-etoiles input:checked + label {
+    color: #ffcc00;
+    }
+
+    .boite-etoiles label.selected {
+    color: #ffcc00;
+    }
+
+/* Mediaqueries de la rubrique témoginage */
+
+@media screen and (min-width : 850px) {
+    .temoignage {
+        display: flex;
+        width: auto;
+
+    }
+
+    .champ {
+        display: flex;
+        flex-direction: row;
+        width: auto;
+    }
+
+    .div1, .div2{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .textinput {
+        margin: auto;
+        width: 98%;
+        height: 30px;
+        border-radius: 50px;
+        border: 1px solid black;
+        background-color: #ABB6D0;
+        font-family: 'Roboto';
+        font-size: 15px;
+        margin-bottom: 10px;
+    }
+
+    .textarea {
+        margin: 10px;
+        width: 100%;
+        height: 100px;
+        border-radius: 20px;
+        border: 1px solid black;
+        background-color: #ABB6D0;
+        font-family: 'Roboto';
+        font-size: 15px;
+        margin-bottom: 10px;
+    }
+
+    .merci {
+        display: block;
+        margin: auto;  
+        width: auto; 
+    }
+
+    /*.boite-etoiles {
+        display: inline-block;
+        font-size: 0;  Pour supprimer l'espace entre les étoiles 
+      }*/
+      
+      .boite-etoiles input {
+        display: none;
+      }
+      
+      .boite-etoiles label {
+        font-size: 50px;
+        color: #ccc;
+        cursor: pointer;
+        transition: color 0.3s;
+      }
+      
+      .boite-etoiles input:checked + label {
+        color: #ffcc00;
+      }
+
+      .boite-etoiles label.selected {
+        color: #ffcc00;
+      }
 }
