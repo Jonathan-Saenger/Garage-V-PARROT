@@ -18,23 +18,20 @@ const closeNav = document.querySelector(".fermeture")
         
     //Formulaire témoignage
 
-    const etoiles = document.querySelectorAll(".boite-etoiles label");
+const etoiles = document.querySelectorAll(".boite-etoiles label");
+const noteInput = document.querySelector("#temoignage_note");
 
-    etoiles.forEach((label, index) => {
-      label.addEventListener("click", () => {
-        for (let i = 0; i < etoiles.length; i++) {
-          if (i <= index) {
-            etoiles[i].classList.add("selected");
-          } else {
-            etoiles[i].classList.remove("selected");
-          }
-        }
-      });
+etoiles.forEach((label, index) => {
+    label.addEventListener("click", () => {
+        etoiles.forEach((etoile, i) => {
+            if (i <= index) {
+                etoile.classList.add("selected");
+            } else {
+                etoile.classList.remove("selected");
+            }
+        });
+        noteInput.value = index + 1;
     });
+});
 
-    
-    
-    
-    
-    
 

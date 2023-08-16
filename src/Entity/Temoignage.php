@@ -24,7 +24,7 @@ class Temoignage
     private ?int $note = null;
 
     #[ORM\Column]
-    private ?bool $publication = null;
+    private ?bool $publication = false;
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
     private ?\DateTimeInterface $jourpublication = null;

@@ -7,9 +7,42 @@
 <h2> Témoignages </h2>
 <center><p> Votre satisfaction, notre priorité !<p></center>
 
-    <div class="temoignage">
-        <form action="" method="POST" class="form-temoignage">
+    <div class="alert-success">
+        {% for message in app.flashes('success') %}
+            <h2> {{ message }} </h2>
+        {% endfor %}
+    </div>
 
+    <div class="temoignage">
+    
+    {{ form_start(form, {'attr': {'class': 'form-temoignage'}}) }}
+
+         <div class="champ">
+            <div class="div1">
+                {{ form_row(form.nom, {'attr': {'class': 'textinput', 'placeholder' :'Vincent Parrot'}}) }}
+            </div>
+        </div>
+
+        <span class="note"> Note : </span><br>
+            <div class="galaxie">
+                <div class="boite-etoiles">
+                    {% for i in 1..5 %}
+                        <input type="radio" id="note{{ i }}" name="{{ form.note.vars.full_name }}" value="{{ i }}"
+                        {% if form.note.vars.value == i %}checked{% endif %}/>
+                        <label for="note{{ i }}" class="etoile"> &#9733; </label>
+                    {% endfor %}
+                </div>
+            </div>
+        {{ form_widget(form.note, {'attr': {'style': 'display: none'}}) }}
+
+        {{ form_row(form.commentaire, {'attr': {'class': 'textarea', 'placeholder' :'Merci pour votre commentaire'}}) }}
+
+        <button class="boutonenvoyer" type="submit">Envoyer</button>
+
+    {{ form_end(form) }}
+
+        <!--<form action="" method="POST" class="form-temoignage">
+        
             <div class="champ">
                 <div class="div1">
                     <label for="name"> Nom et prénom : </label><br>
@@ -24,16 +57,16 @@
             <span class="note"> Note : </span><br>
             <div class="galaxie">
                 <div class="boite-etoiles">
-                    <input type="radio" id="note1" name="radio" value="note"/>
-                    <label for="note1" class="etoile"> &#9733; </label>
-                    <input type="radio" id="note2" name="radio" value="note" />
-                    <label for="note2" class="etoile"> &#9733; </label>
-                    <input type="radio" id="note3" name="radio" value="note" />
-                    <label for="note3" class="etoile"> &#9733; </label>
-                    <input type="radio" id="note4" name="radio" value="note" />
-                    <label for="note4" class="etoile"> &#9733; </label>
-                    <input type="radio" id="note5" name="radio" value="note" />
-                    <label for="note5" class="etoile"> &#9733; </label> <br>
+                    <input type="radio" id="note1" name="radio" value="1"/>
+                    <label for="note" class="etoile"> &#9733; </label>
+                    <input type="radio" id="note2" name="radio" value="2" />
+                    <label for="note" class="etoile"> &#9733; </label>
+                    <input type="radio" id="note3" name="radio" value="3" />
+                    <label for="note" class="etoile"> &#9733; </label>
+                    <input type="radio" id="note4" name="radio" value="4" />
+                    <label for="note" class="etoile"> &#9733; </label>
+                    <input type="radio" id="note5" name="radio" value="5" />
+                    <label for="note" class="etoile"> &#9733; </label> <br>
                 </div>
             </div>  
 
@@ -41,7 +74,7 @@
             <textarea class="textarea" name="commentaire" id="commentaire" placeholder="Merci pour votre commentaire" required> </textarea><br>
             
             <button class="boutonenvoyer" type="submit">Envoyer</button>
-        </form>
+        </form>-->
     </div>
 
      <img class="merci" src="{{ asset('images/generiques/Merci.jpg') }}" alt="Merci pour votre témoignage !">
