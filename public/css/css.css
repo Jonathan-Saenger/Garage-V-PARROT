@@ -423,6 +423,7 @@ footer img {
 }
 
 .pagination .first, .last {
+    
     display: none;
 }
 
@@ -587,3 +588,27 @@ color : #0D2459;
         color: #ffcc00;
       }
 }
+
+.bloctemoignages {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.temoignage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+ .temoignage .commentaire {
+    font-family: "roboto";
+    font-weight: 400;
+    font-size: 40px;
+    justify-content: center;
+    text-align: center;
+}
+
+
+

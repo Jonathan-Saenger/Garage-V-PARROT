@@ -12,7 +12,7 @@
             <img class="imageFile" src="{{ vich_uploader_asset(Service,'imageFile') }}" alt="Nos services, notre profesionnalisme">
             <div class="carte-texte">
                 <h3 class="carte-titre"> {{ Service.getTitre() }} </h3>
-                <p class="carte-description"> {{ Service.getDescription() }}</p>
+                <p class="descriptiontemoignage"> {{ Service.getDescription() }}</p>
                 <center><a class="bouton" href="{{path ('app_services')}}">RENDEZ-VOUS</a></center>
                 <center><a class="bouton" href="{{path ('app_services')}}">DEVIS GRATUIT</a></center>
             </div>

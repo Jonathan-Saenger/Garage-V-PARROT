@@ -39,6 +39,14 @@ class TemoignageRepository extends ServiceEntityRepository
         }
     }
 
+    public function paginationQueryTemoignage()
+    {
+        return $this->createQueryBuilder('s')
+            ->orderBy('s.id', 'ASC')
+            ->getQuery()
+        ;
+   }
+
 //    /**
 //     * @return Temoignage[] Returns an array of Temoignage objects
 //     */

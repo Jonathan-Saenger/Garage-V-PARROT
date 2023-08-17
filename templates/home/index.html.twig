@@ -61,6 +61,20 @@
       </div>
     </article>
 
+    {#  Bloc Témoignages #}
+
+    <article class="bloctemoignages">
+          <h2> VOS TEMOIGNAGES </h2>
+    <div class="temoignage">
+      {% for Temoignage in Temoignage %}
+                  <div class="">{{Temoignage.getNote}}</div>
+                  <div class="nomtemoignage"><p> {{ Temoignage.getNom() }} - {{ Temoignage.getJourpublication|format_date('long', locale='fr')}}</p></div>
+                  <span class="commentaire"> {{ Temoignage.getCommentaire() }}</span>
+      {% endfor %}
+      {{ knp_pagination_render(Temoignage) }}
+    </div>
+    </article>
+
 {% endblock %}
 
 
