@@ -42,6 +42,8 @@ class TemoignageRepository extends ServiceEntityRepository
     public function paginationQueryTemoignage()
     {
         return $this->createQueryBuilder('s')
+            ->andWhere('s.publication = :publication')
+            ->setParameter('publication', true)
             ->orderBy('s.id', 'ASC')
             ->getQuery()
         ;

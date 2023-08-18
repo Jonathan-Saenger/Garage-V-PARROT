@@ -18,9 +18,13 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class TemoignagesController extends AbstractController
 {
     #[Route('/temoignages', name: 'app_temoignages')]
+    
+    public function index(ManagerRegistry $doctrine, 
+    HoraireRepository $HoraireRepository, 
+    TemoignageRepository $TemoignageRepository, 
+    Request $request, 
+    EntityManagerInterface $entityManager): Response {
 
-    public function index(ManagerRegistry $doctrine, HoraireRepository $HoraireRepository, TemoignageRepository $TemoignageRepository, Request $request, EntityManagerInterface $entityManager): Response
-    {
         //affichage de l'horaire
         $HoraireRepository = $doctrine->getRepository(Horaire::class);
         $Horaires = $HoraireRepository ->findAll();

@@ -4,11 +4,13 @@ namespace App\Controller;
 
 use App\Entity\Horaire;
 use App\Entity\Service;
+use App\Entity\Temoignage;
 use App\Repository\HoraireRepository;
 use App\Repository\ServiceRepository;
 use App\Repository\TemoignageRepository;
-use Doctrine\Persistence\ManagerRegistry;
 //use Symfony\Component\BrowserKit\Request;
+use Doctrine\ORM\EntityManagerInterface;
+use Doctrine\Persistence\ManagerRegistry;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -47,6 +49,7 @@ class HomeController extends AbstractController
             //'Services' => $Services,
             'Pagination' => $Pagination,
             'Temoignage' => $PaginationTemoignage,
+
         ]);
     }
 }

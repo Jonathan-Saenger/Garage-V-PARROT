@@ -39,8 +39,6 @@
               <div class="carte-texte">
                   <h3 class="carte-titre"> {{ Service.getTitre() }} </h3>
                   <p class="carte-description"> {{ Service.getDescription() }}</p>
-                  <center><a class="bouton" href="{{path ('app_services')}}">RENDEZ-VOUS</a></center>
-                  <center><a class="bouton" href="{{path ('app_services')}}">DEVIS GRATUIT</a></center>
               </div>
           </article>
       {% endfor %}
@@ -64,16 +62,21 @@
     {#  Bloc Témoignages #}
 
     <article class="bloctemoignages">
-          <h2> VOS TEMOIGNAGES </h2>
+          <h2 class="titretemoignage"> VOS TEMOIGNAGES </h2>
     <div class="temoignage">
-      {% for Temoignage in Temoignage %}
-                  <div class="">{{Temoignage.getNote}}</div>
-                  <div class="nomtemoignage"><p> {{ Temoignage.getNom() }} - {{ Temoignage.getJourpublication|format_date('long', locale='fr')}}</p></div>
-                  <span class="commentaire"> {{ Temoignage.getCommentaire() }}</span>
-      {% endfor %}
-      {{ knp_pagination_render(Temoignage) }}
+        {% for Temoignage in Temoignage %}
+            <div class="boite-etoiles">
+              {% for i in 1..Temoignage.note %}
+                <span class="etoile">&#9733;</span>
+              {% endfor %}
+            </div>
+            <span class="nomtemoignage"> {{ Temoignage.getNom() }} - {{ Temoignage.getJourpublication|format_date('long', locale='fr')}}</span> 
+            <span class="commentaire"> {{ Temoignage.getCommentaire() }}</span><br>
+        {% endfor %}          
     </div>
+        {{ knp_pagination_render(Temoignage) }}
     </article>
+
 
 {% endblock %}
 

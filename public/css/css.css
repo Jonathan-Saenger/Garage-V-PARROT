@@ -422,9 +422,37 @@ footer img {
      }
 }
 
-.pagination .first, .last {
-    
+.pagination .first, .last, .page, .current{
     display: none;
+}
+
+.pagination .next {
+        font-family: 'Roboto', sans-serif;
+        font-size: 50px;
+        letter-spacing: 0px;
+        word-spacing: 100px;
+        color: #000000;
+        font-weight: normal;
+        font-style: oblique;
+        font-variant: normal;
+        text-transform: capitalize;
+}
+
+.pagination .previous {
+    font-family: 'Roboto', sans-serif;
+    font-size: 50px;
+    letter-spacing: 0px;
+    word-spacing: 100px;
+    color: #000000;
+    font-weight: normal;
+    font-style: oblique;
+    font-variant: normal;
+    text-transform: capitalize;
+}
+
+.pagination a:hover {
+    padding: 1px;
+    color: #ABB6D0;
 }
 
 /* Témoignages */
@@ -514,6 +542,11 @@ color : #0D2459;
     color: #ffcc00;
     }
 
+    .etoile {
+    font-size: 50px;
+    color: #ffcc00;
+    }
+
 /* Mediaqueries de la rubrique témoginage */
 
 @media screen and (min-width : 850px) {
@@ -589,6 +622,7 @@ color : #0D2459;
       }
 }
 
+/* Style de la rubrique Témoignage de l'index */
 .bloctemoignages {
     display: flex;
     flex-direction: column;
@@ -608,6 +642,21 @@ color : #0D2459;
     font-size: 40px;
     justify-content: center;
     text-align: center;
+}
+
+.nomtemoignage {
+    margin-top: 0px;
+    margin-bottom: 10px;
+    padding-top: 0;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 20px;
+    color: black;
+}
+
+.titretemoignage {
+    margin-top: 20px;
+    margin-bottom: 0;
+    padding: 0;
 }
 
 
