@@ -659,5 +659,65 @@ color : #0D2459;
     padding: 0;
 }
 
+/* Rubrique Annonces Véhicules */
+
+.carte-annonce {
+    color: #0D2459;
+    background-color: white ;
+    text-align: justify;
+    border: solid 1px #000000;
+    padding: 10px;
+}
+
+.carte-annonce h3 {
+    font-family: "roboto";
+    font-weight: 400;
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.carte-annonce p {
+    color: #0D2459;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    margin: 0;
+}
+
+.prix {
+	background-color:#0d2459;
+	border-radius: 28px;
+	display: inline-block;
+	color:#ffffff;
+	font-family: Roboto;
+	font-size: 15px;
+	font-weight:bold;
+	padding: 8px 27px;
+	text-decoration: none;
+    margin: 10px;
+}
+
+.imageFile {
+    width: 100%;
+    height: 214px;
+}
+
+.boutondetails {
+	background-color: #ABB6D0;
+	border-radius: 28px;
+	border: 1px solid white;
+	display: inline-block;
+	cursor: pointer;
+	color:black;
+	font-family: Roboto;
+	font-size:25px;
+	font-weight:bold;
+	padding: 8px 27px;
+	text-decoration: none;
+    margin: 10px;
+}
+
+
 
 

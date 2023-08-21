@@ -60,6 +60,12 @@ class Annonce
     #[ORM\Column(nullable: true)]
     private ?\DateTimeImmutable $updatedAt = null;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $carburant = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $boite_vitesse = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -242,6 +248,30 @@ class Annonce
     public function setUpdatedAt(?\DateTimeImmutable $updatedAt): static
     {
         $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    public function getCarburant(): ?string
+    {
+        return $this->carburant;
+    }
+
+    public function setCarburant(?string $carburant): static
+    {
+        $this->carburant = $carburant;
+
+        return $this;
+    }
+
+    public function getBoiteVitesse(): ?string
+    {
+        return $this->boite_vitesse;
+    }
+
+    public function setBoiteVitesse(?string $boite_vitesse): static
+    {
+        $this->boite_vitesse = $boite_vitesse;
 
         return $this;
     }

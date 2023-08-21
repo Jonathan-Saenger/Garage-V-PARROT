@@ -20,14 +20,15 @@ class AnnonceCrudController extends AbstractCrudController
 
     public function configureFields(string $pageName): iterable
     {
-        yield TextField::new('titre');
-        yield TextareaField::new('description');
-        yield TextField::new('infotechniques');
+        yield TextField::new('titre');//
+        yield TextareaField::new('description'); 
+        yield TextField::new('infotechniques'); //
         yield TextField::new('marque');
-        yield NumberField::new('prix');
-        yield NumberField::new('annee');
-        yield NumberField::new('kilometrage');
-        //yield TextField::new('informationcontact');
+        yield NumberField::new('prix');//
+        yield NumberField::new('annee'); //
+        yield NumberField::new('kilometrage');//
+        yield TextField::new('carburant');
+        yield TextField::new('boite_vitesse');
         yield TextareaField::new('imageFile')->setFormType(VichImageType::class);
     }
 }
