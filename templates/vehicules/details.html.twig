@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<div class="carte-voiture">
+
+    <div class="voiture">
+        <img class="imageFile" src="{{ vich_uploader_asset(Annonce,'imageFile') }}" alt="Des occasions en or à saisir dès maintenant">
+        <div class="carte-annonce">
+            <h3 class="carte-titre"> {{ Annonce.getTitre() }} </h3> <br>
+            <p> {{ Annonce.getInfotechniques() }} </p> <br>
+            <p> {{ Annonce.getAnnee}} | {{ Annonce.getCarburant}} | {{ Annonce.getKilometrage}} km | {{ Annonce.getBoiteVitesse}}</p> <br>
+            <p> {{Annonce.getDescription}} <p> <br>
+            <span class="prix"> {{ Annonce.getPrix}} € </span>
+        </div>
+    </div>
+
+        <div class="formulaire">
+            <h2> Une question sur ce modèle ?</h2>
+            <p> Nous sommes là pour vous !  
+            Vous pouvez soit nous appeler, soit poser vos questions 
+            en utilisant le formulaire suivant : </p>
+            <form action="" method="POST" class="form-annonce">
+            <div class="champ">
+                <div class="div1">
+                    <label for="name"> Nom et prénom : </label><br>
+                    <input class="textinput" type="text" placeholder="Vincent Parrot" name="name" id="name" required/> <br>
+                </div>
+                <div class="div2">
+                    <label for="mail"> E-mail : </label><br>
+                    <input class="textinput" type="text" placeholder="exemple@exemple.fr" name="mail" id="mail" required/><br>
+                </div> <br>
+                <div class="div1">
+                    <label for="tel"> Numéro de téléphone : </label><br>
+                    <input class="textinput" type="text" placeholder="+33" name="tel" id="tel" required/> <br>
+                </div>
+            </div>
+            <label for="cmessage"> Message : </label><br>
+            <textarea class="textarea" name="message" id="message" placeholder="Votre message" required> </textarea><br>
+            <input type="radio" id="note1" name="radio" value="1"/>
+            <label for="valider" class="valider"> Je suis intéressé par le véhicule {{ Annonce.getTitre() }} </label><br>
+            <button class="boutonvehicule" type="submit">Envoyer</button>
+        </form>
+    </div>
+
+</div>
+{% endblock %}

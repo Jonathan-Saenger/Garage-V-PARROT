@@ -4,11 +4,35 @@
 
 {% block body %}
 
-    <h2> Nos véhicules d'occasion </2>
+    <h2> Nos véhicules d'occasion </h2>
 
-    <p> Des occasions en or à saisir dès maintenant </p>
+    <center><p> Des occasions en or à saisir dès maintenant </p></center>
 
-    <p> Une question sur ce modèle ? </p>
+<div class="filtre"> 
+    <span class="filtretitre"> FILTRE DE RECHERCHE </span>
+    <form class="filtrerecherche">
+        <div>
+        <p>Prix max :<p>
+        <input type="range" id="Prix" name="Prix"  min="0" max="80000" step="1000" value="40000" />
+        <label for="prix"></label>
+        <output id="prixValeur"> - </output>€
+        </div>
+        
+        <div>
+        <p>Kilométrage max:</p>
+        <input type="range" id="kilométrage" name="kilométrage" min="0" max="300000" step="10000" value="150000" />
+        <label for="kilométrage"></label>
+        <output id="kilometrageValeur"> - </output>km
+        </div>
+
+        <div>
+        <p>Années max :</p>
+        <input type="range" id="années" name="années" min="1990" max="2023" step="1" value="2006" />
+        <label for="années"></label>
+        <output id="anneeValeur"> - </output>
+        </div>
+    </form>
+</div>
 
 <div class="carte">
     {% for Annonce in Annonces %}
@@ -20,7 +44,7 @@
                 <p> {{ Annonce.getAnnee}} | {{ Annonce.getCarburant}} | {{ Annonce.getKilometrage}} km | {{ Annonce.getBoiteVitesse}}</p>
                 <span class="prix"> {{ Annonce.getPrix}} € </span>
 
-                <center><a class="boutondetails" href="{{path ('app_vehicules')}}">DETAILS</a></center>
+                <center><a class="boutondetails" href="{{ path('app_detail_vehicule', {'id': Annonce.id}) }}" target="_blank">DETAILS</a></center>
             </div>
         </article>
     {% endfor %}

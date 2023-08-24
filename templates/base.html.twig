@@ -27,7 +27,9 @@
         {%include "partials/footer.html.twig" %}
         {% endblock %}
 
-        {% block javascripts %} <script src="{{ asset('javascript/script.js') }}"></script> {% endblock %}
-    
+        {% block javascripts %} 
+        <script src="{{ asset('https://code.jquery.com/jquery-3.7.0.min.js') }}"></script>
+        <script src="{{ asset('javascript/script.js') }}"></script>
+        {% endblock %}
     </body>
 </html>
