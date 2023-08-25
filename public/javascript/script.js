@@ -59,3 +59,61 @@ kilometrageInput.addEventListener("input", () => {
 anneesInput.addEventListener("input", () => {
     afficherValeur(anneesInput, anneesOutput);
 });
+
+// Evènement de recherche des véhicules filtrés 
+
+const boutonFiltrer = document.querySelector('.filtrebouton');
+const annonceDiv = document.querySelector('.carte'); 
+
+boutonFiltrer.addEventListener('click', () => {
+    const prixValeur = document.getElementById('Prix').value;
+    const kilometrageValeur = document.getElementById('kilométrage').value;
+    const anneeValeur = document.getElementById('années').value;
+
+    // Requête AJAX
+    const xhr = new XMLHttpRequest();
+
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                const annonceFiltre = JSON.parse(xhr.responseText);
+                annonceDiv.innerHTML = ''; 
+                annonceFiltre.forEach(annonce => {
+                    const imageElement = document.createElement('img');
+                    imageElement.classList.add('imageFile');
+                    imageElement.alt = 'Des occasions en or à saisir dès maintenant';
+                    imageElement.src = annonce.imageFile ? annonce.imageFile : '';
+                    imageElement.dataset.image = annonce.imageFile; // Ajoutez l'URL en tant qu'attribut data
+                    
+                    const article = document.createElement('article');
+                    article.classList.add('carte-service'); // Ajout de la classe pour l'article
+                    article.appendChild(imageElement);
+
+                    const divCarteAnnonce = document.createElement('div');
+                    divCarteAnnonce.classList.add('carte-annonce'); // Ajout de la classe pour la div
+                    divCarteAnnonce.innerHTML = `
+                        <h3 class="carte-titre">${annonce.titre}</h3>
+                        <p>${annonce.infotechniques}</p>
+                        <p>${annonce.annee} | ${annonce.carburant} | ${annonce.kilometrage} km | ${annonce.boiteVitesse}</p>
+                        <span class="prix">${annonce.prix} €</span>
+                        <center><a class="boutondetails" href="${annonce.url}" target="_blank">DETAILS</a></center>
+                    `;
+
+                    article.appendChild(divCarteAnnonce);
+                    annonceDiv.appendChild(article);
+                });
+            } else {
+                // Gérer les erreurs
+            }
+        }
+    };
+
+    const url = `/filtrer-annonces?annee=${anneeValeur}&prix=${prixValeur}&kilometrage=${kilometrageValeur}`;
+    xhr.open('GET', url, true);
+    xhr.send();
+});
+
+
+
+
+

@@ -39,6 +39,20 @@ class AnnonceRepository extends ServiceEntityRepository
         }
     }
 
+    public function findFiltre($anneeValeur, $prixValeur, $kilometrageValeur)
+    {
+        $qb = $this->createQueryBuilder('a')
+            ->where('a.annee <= :anneeValeur')
+            ->andWhere('a.prix <= :prixValeur')
+            ->andWhere('a.kilometrage <= :kilometrageValeur')
+            ->setParameter('anneeValeur', $anneeValeur)
+            ->setParameter('prixValeur', $prixValeur)
+            ->setParameter('kilometrageValeur', $kilometrageValeur)
+            ->getQuery();
+
+        return $qb->getResult();
+    }
+
 //    /**
 //     * @return Annonce[] Returns an array of Annonce objects
 //     */
