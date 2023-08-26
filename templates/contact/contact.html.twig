@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Contacter l'atelier {% endblock %}
+
+{% block body %}
+
+<h2> Formulaire de contact </h2>
+
+    <div class="alert-success">
+        {% for flashMessage in app.flashes('success') %}
+            <h2> {{ flashMessage }} </h2>
+        {% endfor %}
+    </div>
+
+    <div class="temoignage">
+        {{ form_start(form,{'attr': {'class': 'form-temoignage'}}) }}
+
+         <div class="champ">
+            <div class="div1">
+                {{ form_row(form.nom, {'attr': {'class': 'textinput', 'placeholder' :'Votre nom'}}) }}
+            </div>
+        </div>
+        <div class="champ">
+            <div class="div1">
+                {{ form_row(form.prenom, {'attr': {'class': 'textinput', 'placeholder' :'Votre prénom'}}) }}
+            </div>
+        </div>
+        <div class="champ">
+            <div class="div1">
+                {{ form_row(form.email, {'attr': {'class': 'textinput', 'placeholder' :'Votre Email'}}) }}
+            </div>
+        </div>
+        <div class="champ">
+            <div class="div1">
+                {{ form_row(form.telephone, {'attr': {'class': 'textinput', 'placeholder' :'Votre numéro de téléphone'}}) }}
+            </div>
+        </div>
+        <div class="champ">
+            <div class="div1">
+        {{ form_row(form.message, {'attr': {'class': 'textarea', 'placeholder' :'Veuillez saisir votre message'}}) }}
+            </div>
+        </div>
+
+        <button class="boutonenvoyer" type="submit">Envoyer</button>
+
+    </div>
+
+{{ form_end(form) }}
+
+{% endblock %}

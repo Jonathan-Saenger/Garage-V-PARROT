@@ -4,23 +4,24 @@ namespace App\Controller;
 
 use App\Entity\Annonce;
 use App\Entity\Horaire;
+use App\Form\ContactType;
 use Doctrine\ORM\Mapping\Id;
+use Symfony\Component\Mime\Email;
 use App\Repository\AnnonceRepository;
 use App\Repository\HoraireRepository;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Vich\UploaderBundle\Templating\Helper\UploaderHelper;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Vich\UploaderBundle\Templating\Helper\UploaderHelper;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class VehiculesController extends AbstractController
 {
     #[Route('/vehicules', name: 'app_vehicules')]
-    public function index(ManagerRegistry $doctrine, 
-    HoraireRepository $HoraireRepository, 
-    AnnonceRepository $AnnonceRepository): Response
+    public function index(ManagerRegistry $doctrine, HoraireRepository $HoraireRepository, AnnonceRepository $AnnonceRepository): Response
     {
         $HoraireRepository = $doctrine->getRepository(Horaire::class);
         $Horaires = $HoraireRepository ->findAll();
@@ -36,10 +37,8 @@ class VehiculesController extends AbstractController
     }
 
     #[Route('/vehicules/{id}', name: 'app_detail_vehicule')]
-    public function detail($id, ManagerRegistry $doctrine, 
-    HoraireRepository $HoraireRepository, 
-    AnnonceRepository $AnnonceRepository,
-    Annonce $Annonce): Response
+    public function detail($id, ManagerRegistry $doctrine, HoraireRepository $HoraireRepository, AnnonceRepository $AnnonceRepository, 
+    Annonce $Annonce, Request $request, MailerInterface $mailer): Response
     {
         $HoraireRepository = $doctrine ->getRepository(Horaire::class);
         $Horaires = $HoraireRepository ->findAll();
@@ -48,10 +47,36 @@ class VehiculesController extends AbstractController
         $AnnonceRepository = $doctrine ->getRepository(Annonce::class);
         $Annonce = $AnnonceRepository ->find($id);
 
+        $form = $this->createForm(ContactType::class);
+
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+        $data = $form->getData();
+
+        $nom = $data['nom'];
+        $prenom = $data['prenom'];
+        $email = $data['email'];
+        $telephone = $data['telephone'];
+        $message = $data['message'];
+
+        $email = (new Email())
+        ->from($email)
+        ->to('you@example.com')
+        ->subject('Formulaire de contact')
+        ->text($message)
+        ->html('<p>Bonjour à toute l\'équipe ! Vous avez reçu un message de </p>');
+
+         $mailer->send($email);
+
+         $this->addFlash('success', 'Merci ! L\'équipe V. Parrot vous recontactera dans les meilleurs délais !');
+         return $this->redirectToRoute('app_vehicules');
+        }
+
         return $this->render('vehicules/details.html.twig', [
             'controller_name' => 'VehiculesController',
             'Horaires' => $Horaires,
             'Annonce' => $Annonce,
+            'form' => $form->createView(),
         ]);
     }
 

@@ -15,7 +15,44 @@
         </div>
     </div>
 
-        <div class="formulaire">
+    <div class="temoignage">
+        <h2> Une question sur ce modèle ? <br> 
+        {{ Annonce.getTitre() }} ? </h2>
+        {{ form_start(form,{'attr': {'class': 'form-temoignage'}}) }}
+
+         <div class="champ">
+            <div class="div1">
+                {{ form_row(form.nom, {'attr': {'class': 'textinput', 'placeholder' :'Votre nom'}}) }}
+            </div>
+        </div>
+        <div class="champ">
+            <div class="div1">
+                {{ form_row(form.prenom, {'attr': {'class': 'textinput', 'placeholder' :'Votre prénom'}}) }}
+            </div>
+        </div>
+        <div class="champ">
+            <div class="div1">
+                {{ form_row(form.email, {'attr': {'class': 'textinput', 'placeholder' :'Votre Email'}}) }}
+            </div>
+        </div>
+        <div class="champ">
+            <div class="div1">
+                {{ form_row(form.telephone, {'attr': {'class': 'textinput', 'placeholder' :'Votre numéro de téléphone'}}) }}
+            </div>
+        </div>
+        <div class="champ">
+            <div class="div1">
+        {{ form_row(form.message, {'attr': {'class': 'textarea', 'placeholder' :'Veuillez saisir votre message'}}) }}
+            </div>
+        </div>
+
+        <button class="boutonenvoyer" type="submit">Envoyer</button>
+
+    </div>
+
+{{ form_end(form) }}
+
+    {#<div class="formulaire">
             <h2> Une question sur ce modèle ?</h2>
             <p> Nous sommes là pour vous !  
             Vous pouvez soit nous appeler, soit poser vos questions 
@@ -41,7 +78,7 @@
             <label for="valider" class="valider"> Je suis intéressé par le véhicule {{ Annonce.getTitre() }} </label><br>
             <button class="boutonvehicule" type="submit">Envoyer</button>
         </form>
-    </div>
+    </div>#}
 
 </div>
 {% endblock %}
