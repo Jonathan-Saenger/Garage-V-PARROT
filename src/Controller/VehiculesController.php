@@ -57,6 +57,7 @@ class VehiculesController extends AbstractController
         $prenom = $data['prenom'];
         $email = $data['email'];
         $telephone = $data['telephone'];
+        $vehicule = $data['vehicule'];
         $message = $data['message'];
 
         $email = (new Email())
@@ -64,7 +65,8 @@ class VehiculesController extends AbstractController
         ->to('you@example.com')
         ->subject('Formulaire de contact')
         ->text($message)
-        ->html('<p>Bonjour à toute l\'équipe ! Vous avez reçu un message de </p>');
+        ->html('<p>Bonjour à toute l\'équipe ! Vous avez reçu une demande de contact de ' . $nom . ' ' . $prenom . '. Sa demande concerne le véhicule
+        '.$Annonce->getTitre().'. Vous pouvez le rappeler sur son numéro ' . $telephone . '. Voici son message : ' . $message . ' </p>');
 
          $mailer->send($email);
 

@@ -3,10 +3,15 @@
 namespace App\Form;
 
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\RadioType;
+use Symfony\Component\Form\Extension\Core\Type\HiddenType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\ChoiceList\Factory\Cache\ChoiceValue;
 
 class ContactType extends AbstractType
 {
@@ -17,6 +22,11 @@ class ContactType extends AbstractType
             ->add('prenom')
             ->add('email')
             ->add('telephone')
+            ->add('vehicule', null, [
+                'attr' => ['style' => 'display: none;'],
+                    'required' => false,
+                    'label' => false,
+                    'required' => false])
             ->add('message', TextareaType::class)
             //->add('envoyer', SubmitType::class)
         ;
