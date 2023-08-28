@@ -57,7 +57,6 @@ class VehiculesController extends AbstractController
         $prenom = $data['prenom'];
         $email = $data['email'];
         $telephone = $data['telephone'];
-        $vehicule = $data['vehicule'];
         $message = $data['message'];
 
         $email = (new Email())

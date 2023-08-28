@@ -22,11 +22,6 @@ class ContactType extends AbstractType
             ->add('prenom')
             ->add('email')
             ->add('telephone')
-            ->add('vehicule', null, [
-                'attr' => ['style' => 'display: none;'],
-                    'required' => false,
-                    'label' => false,
-                    'required' => false])
             ->add('message', TextareaType::class)
             //->add('envoyer', SubmitType::class)
         ;
