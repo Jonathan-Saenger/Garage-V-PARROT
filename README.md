@@ -1,3 +1,5 @@
+<p align="center"><img src="public\images\generiques\garagevparrot.jpg">
+
 <h1>Projet Garage V. PARROT</h1>
 
 Bonjour et bienvenue ! <br>

@@ -30,7 +30,6 @@ class UserCrudController extends AbstractCrudController
         yield TextField::new('Prenom')->setPermission('ROLE_ADMIN');
         yield TextField::new('Email')->setPermission('ROLE_ADMIN');
         yield TextField::new('Password')->setPermission('ROLE_ADMIN');
-        yield ChoiceField::new('roles')->setChoices(array_combine($roles, $roles))->allowMultipleChoices()->renderExpanded()->renderAsBadges()->setPermission('ROLE_ADMIN');
     }
 
     public function configureActions(Actions $actions): Actions
