@@ -23,6 +23,7 @@ Les documents annexes sont disponibles dans le dossier ANNEXES :
 Installation de XAMPP (version 8.2.4) et démarrage des modules Apache & MySQL <br>
 Installation de PHP (version 8.2.4 utilisée dans ce projet) <br>
 Installation de Composer qui est un gestionnaire de dépendances <br>
+Installation de Doctrine
 
 <h2> Récupération du projet depuis le dépôt distant Github </h2>
 
@@ -36,7 +37,10 @@ Vous devriez voir apparaitre l'arborescence du projet au sein de votre IDE.
 **Déplacez-vous dans le dossier en tapant dans votre invite de commandes :** <br>
 > cd Garage-V-Parrot <br>
 
-**Création de la base de données :**<br>
+Le lien de la base de donnée figure déjà dans le fichier .env. Cette base est uniquement créée pour le garage. A défaut, <br>
+vous pouvez la décommenter (en ajoutant # devant) ou directement la remplacer par votre base de donnée.
+
+**Configuration de la base de données :** (à défaut d'utilisation de la base de données déjà présente)<br>
 Dans le fichier .env au sein du répertoire racine du projet, configurez les identifiants de votre base de données : <br>
 Exemple : DATABASE_URL="(votre base de données)"<br>
 
@@ -45,6 +49,10 @@ Exemple : DATABASE_URL="(votre base de données)"<br>
 
 **Ensuite, pour mettre à jour la base de données locale, effectuez les migrations avec la commande :** 
 > symfony doctrine:migrations:migrate
+
+A défaut de Symfony, les commandes peuvent être effectuées successivement de cette manière :
+> php bin/console doctrine:database:create
+> php bin/console doctrine:migrations:migrate
 
 <h2> Utilisation </h2>
 
