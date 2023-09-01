@@ -49,11 +49,6 @@ Exemple : DATABASE_URL="(votre base de données)"<br>
 
 **Ensuite, pour mettre à jour la base de données locale, effectuez les migrations avec la commande :** 
 > symfony doctrine:migrations:migrate
-
-A défaut de Symfony, les commandes peuvent être effectuées successivement de cette manière :
-> php bin/console doctrine:database:create
-> php bin/console doctrine:migrations:migrate
-
 <h2> Utilisation </h2>
 
 Pour lancer le serveur de développement, tapez l'invite de commande : 
