@@ -786,12 +786,14 @@ color : #0D2459;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 .filtrerecherche {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 .filtre div {
@@ -806,6 +808,7 @@ color : #0D2459;
 }
 
 .filtre .filtrebouton {
+    max-width: 60%;
 	background-color: #ABB6D0;
 	border-radius: 28px;
 	display: flex;
@@ -825,6 +828,12 @@ color : #0D2459;
         flex-direction: row;
         justify-content: center;
     }
+
+    .filtrerecherche {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
 
     .filtre div {
         margin-left: 30px;
@@ -848,5 +857,19 @@ color : #0D2459;
         padding: 11px 20px;
         text-decoration: none;
     }
+
+    .filtre .filtrebouton {
+	background-color: #ABB6D0;
+	border-radius: 28px;
+	display: flex;
+	color:black;
+	font-family: Roboto;
+    cursor: pointer;
+	font-size: 20px;
+	font-weight:bold;
+	padding: 11px 20px;
+	text-decoration: none;
+    justify-content: center;
+}
 }
 

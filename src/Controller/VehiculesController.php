@@ -62,7 +62,7 @@ class VehiculesController extends AbstractController
         $email = (new Email())
         ->from($email)
         ->to('you@example.com')
-        ->subject('Formulaire de contact')
+        ->subject('Contact au sujet d\'une annonce')
         ->text($message)
         ->html('<p>Bonjour à toute l\'équipe ! Vous avez reçu une demande de contact de ' . $nom . ' ' . $prenom . '. Sa demande concerne le véhicule
         '.$Annonce->getTitre().'. Vous pouvez le rappeler sur son numéro ' . $telephone . '. Voici son message : ' . $message . ' </p>');

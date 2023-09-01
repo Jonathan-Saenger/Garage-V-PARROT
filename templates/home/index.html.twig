@@ -31,7 +31,7 @@
           <center><a class="bouton" href="{{path ('app_services')}}">TOUS NOS SERVICES</a></center>
       </div>
     </article>
-    {# Insérer ici la suite avec les cartes des annonces à paginer depuis la BDD div #}
+
     <div class="carte">
       {% for Service in Pagination %}
           <article class="carte-service">
@@ -77,6 +77,15 @@
         {{ knp_pagination_render(Temoignage) }}
     </article>
 
+    <article class="blocservice">
+      <img class="imageservice" src="{{ asset('images/generiques/emailcontact.jpg') }}" alt="Les services du Garage V Parrot">
+      <div class="textservice-bloc">
+          <h2> UNE QUESTION ? UNE SUGGESTION ? </h2>
+          <p> Vous avez une question ou une suggestion ? N'hésitez pas à remplir le formulaire et poser toutes vos questions.
+          Nos équipes prendront le temps de répondre avec soin et dans les meilleurs délais !</p>
+          <center><a class="bouton" href="{{path ('app_contact')}}">CONTACTER L'ATELIER</a></center>
+      </div>
+    </article>
 
 {% endblock %}
 

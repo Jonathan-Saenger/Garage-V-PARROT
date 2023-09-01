@@ -38,7 +38,8 @@ Vous devriez voir apparaitre l'arborescence du projet au sein de votre IDE.
 > cd Garage-V-Parrot <br>
 
 Le lien de la base de donnée figure déjà dans le fichier .env. Cette base est uniquement créée pour le garage. A défaut, <br>
-vous pouvez la décommenter (en ajoutant # devant) ou directement la remplacer par votre base de donnée.
+vous pouvez la décommenter (en ajoutant # devant) ou directement la remplacer par votre base de donnée dans un fichier .env.local que vous aurez créé
+au préalable.
 
 **Configuration de la base de données :** (à défaut d'utilisation de la base de données déjà présente)<br>
 Dans le fichier .env au sein du répertoire racine du projet, configurez les identifiants de votre base de données : <br>
@@ -53,4 +54,12 @@ Exemple : DATABASE_URL="(votre base de données)"<br>
 
 Pour lancer le serveur de développement, tapez l'invite de commande : 
 > symfony server:start
+
+<h2> Configuration de la boite mail </h2>
+
+Créer un fichier .env.local et ajouter la ligne suivante pour pouvoir vous connecter à la boite mail teste de l'application. 
+> MAILER_DSN=smtp://96e675448063ed:c21baf9a59b215@sandbox.smtp.mailtrap.io:2525 
+
+Commentez la ligne figurant dans le fichier .env. avec # <br>
+> #MAILER_DSN=smtp://96e675448063ed:c21baf9a59b215@sandbox.smtp.mailtrap.io:2525
 

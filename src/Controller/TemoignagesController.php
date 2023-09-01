@@ -9,6 +9,7 @@ use App\Repository\HoraireRepository;
 use App\Repository\TemoignageRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ManagerRegistry;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -23,7 +24,8 @@ class TemoignagesController extends AbstractController
     HoraireRepository $HoraireRepository, 
     TemoignageRepository $TemoignageRepository, 
     Request $request, 
-    EntityManagerInterface $entityManager): Response {
+    EntityManagerInterface $entityManager,
+    PaginatorInterface $paginatorInterface,): Response {
 
         //affichage de l'horaire
         $HoraireRepository = $doctrine->getRepository(Horaire::class);
@@ -39,10 +41,18 @@ class TemoignagesController extends AbstractController
             $entityManager->flush();
             $this->addFlash('success', 'Merci pour votre commentaire ! Il sera publié après modération !');
         }
+
+        $PaginationTemoignage = $paginatorInterface->paginate(
+            $TemoignageRepository->paginationQueryTemoignage(),
+            $request->query->get('page', 1),
+            1
+        );
+        
         return $this->render('temoignages/temoignages.html.twig', [
             'controller_name' => 'TemoignagesController',
             'Horaires' => $Horaires,
             'form' => $form->createView(),
+            'Temoignage' => $PaginationTemoignage,
         ]);
     }
 }

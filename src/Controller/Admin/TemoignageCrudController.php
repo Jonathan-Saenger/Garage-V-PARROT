@@ -32,7 +32,7 @@ class TemoignageCrudController extends AbstractCrudController
         yield IntegerField::new('note');
         yield TextareaField::new('commentaire');
         yield BooleanField::new('publication');
-        yield DateField::new('jourpublication')->setFormat('dd.MM.yyyy');
+        yield DateField::new('jourpublication','Jour de publication (à compléter)')->setFormat('dd.MM.yyyy');
 
     /*
     public function configureFields(string $pageName): iterable

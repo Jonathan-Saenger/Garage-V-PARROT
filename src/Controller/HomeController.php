@@ -8,7 +8,6 @@ use App\Entity\Temoignage;
 use App\Repository\HoraireRepository;
 use App\Repository\ServiceRepository;
 use App\Repository\TemoignageRepository;
-//use Symfony\Component\BrowserKit\Request;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ManagerRegistry;
 use Knp\Component\Pager\PaginatorInterface;

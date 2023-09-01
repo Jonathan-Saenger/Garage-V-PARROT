@@ -6,7 +6,6 @@
 
 <h2> Témoignages </h2>
 <center><p> Votre satisfaction, notre priorité !<p></center>
-
     <div class="alert-success">
         {% for message in app.flashes('success') %}
             <h2> {{ message }} </h2>
@@ -14,34 +13,43 @@
     </div>
 
     <div class="temoignage">
-    
-    {{ form_start(form, {'attr': {'class': 'form-temoignage'}}) }}
-
-         <div class="champ">
-            <div class="div1">
-                {{ form_row(form.nom, {'attr': {'class': 'textinput', 'placeholder' :'Vincent Parrot'}}) }}
-            </div>
-        </div>
-
-        <span class="note"> Note : </span><br>
-            <div class="galaxie">
-                <div class="boite-etoiles">
-                    {% for i in 1..5 %}
-                        <input type="radio" id="note{{ i }}" name="{{ form.note.vars.full_name }}" value="{{ i }}"
-                        {% if form.note.vars.value == i %}checked{% endif %}/>
-                        <label for="note{{ i }}" class="etoile"> &#9733; </label>
-                    {% endfor %}
+        {{ form_start(form, {'attr': {'class': 'form-temoignage'}}) }}
+            <div class="champ">
+                <div class="div1">
+                    {{ form_row(form.nom, {'attr': {'class': 'textinput', 'placeholder' :'Vincent Parrot'}}) }}
                 </div>
             </div>
-        {{ form_widget(form.note, {'attr': {'style': 'display: none'}}) }}
-
-        {{ form_row(form.commentaire, {'attr': {'class': 'textarea', 'placeholder' :'Merci pour votre commentaire'}}) }}
-
-        <button class="boutonenvoyer" type="submit">Envoyer</button>
-
-    {{ form_end(form) }}
-
+            <span class="note"> Note : </span><br>
+                <div class="galaxie">
+                    <div class="boite-etoiles">
+                        {% for i in 1..5 %}
+                            <input type="radio" id="note{{ i }}" name="{{ form.note.vars.full_name }}" value="{{ i }}"
+                            {% if form.note.vars.value == i %}checked{% endif %}/>
+                            <label for="note{{ i }}" class="etoile"> &#9733; </label>
+                        {% endfor %}
+                    </div>
+                </div>
+            {{ form_widget(form.note, {'attr': {'style': 'display: none'}}) }}
+            {{ form_row(form.commentaire, {'attr': {'class': 'textarea', 'placeholder' :'Merci pour votre commentaire'}}) }}
+            <button class="boutonenvoyer" type="submit">Envoyer</button>
+        {{ form_end(form) }}
     </div>
+
+    <article class="bloctemoignages">
+        <h2 class="titretemoignage"> VOS TEMOIGNAGES </h2>
+        <div class="temoignage">
+            {% for Temoignage in Temoignage %}
+                <div class="boite-etoiles">
+                {% for i in 1..Temoignage.note %}
+                    <span class="etoile">&#9733;</span>
+                {% endfor %}
+                </div>
+                <span class="nomtemoignage"> {{ Temoignage.getNom() }} - {{ Temoignage.getJourpublication|format_date('long', locale='fr')}}</span> 
+                <span class="commentaire"> {{ Temoignage.getCommentaire() }}</span><br>
+            {% endfor %}          
+        </div>
+        {{ knp_pagination_render(Temoignage) }}
+    </article>
 
      <img class="merci" src="{{ asset('images/generiques/Merci.jpg') }}" alt="Merci pour votre témoignage !">
 
