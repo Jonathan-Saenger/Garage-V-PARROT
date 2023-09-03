@@ -28,13 +28,12 @@ class UserCrudController extends AbstractCrudController
     {
         yield TextField::new('Nom')->setPermission('ROLE_ADMIN');
         yield TextField::new('Prenom')->setPermission('ROLE_ADMIN');
-        yield TextField::new('Email')->setPermission('ROLE_ADMIN');
+        yield TextField::new('Email', 'Adresse Email')->setPermission('ROLE_ADMIN');
         yield TextField::new('Password')->setPermission('ROLE_ADMIN');
     }
 
     public function configureActions(Actions $actions): Actions
     {
-        return parent::configureActions($actions)->setPermission(Action::INDEX, 'ROLE_ADMIN');
-        
+        return parent::configureActions($actions)->setPermission(Action::INDEX, 'ROLE_ADMIN')->disable(Action::DELETE);
     }
 }

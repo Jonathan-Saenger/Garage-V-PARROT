@@ -28,7 +28,7 @@ Installation de Doctrine
 <h2> Récupération du projet depuis le dépôt distant Github </h2>
 
 Pour récupérer le projet Garage V PARROT, copier la commande GIT Clone ci-dessous et coller-là dans votre terminal GIT pour y récupérer le dépôts. <br>
-/* lien du git*/
+> git clone https://github.com/Jonathan-Saenger/Garage-V-Parrot.git
 
 Vous devriez voir apparaitre l'arborescence du projet au sein de votre IDE. 
 
@@ -57,9 +57,12 @@ Pour lancer le serveur de développement, tapez l'invite de commande :
 
 <h2> Configuration de la boite mail </h2>
 
-Créer un fichier .env.local et ajouter la ligne suivante pour pouvoir vous connecter à la boite mail teste de l'application. 
+Pour tester la boite mail dans un environnement local : <br>
+Créer un fichier .env.local et ajouter la ligne suivante pour pouvoir vous connecter à la boite mail de l'application. 
 > MAILER_DSN=smtp://96e675448063ed:c21baf9a59b215@sandbox.smtp.mailtrap.io:2525 
 
 Commentez la ligne figurant dans le fichier .env. avec # <br>
 > #MAILER_DSN=smtp://96e675448063ed:c21baf9a59b215@sandbox.smtp.mailtrap.io:2525
+
+Cela permettra de tester la boite mail en environnement local.
 
