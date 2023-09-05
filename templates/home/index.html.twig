@@ -38,7 +38,7 @@
               <img class="imageFile" src="{{ vich_uploader_asset(Service,'imageFile') }}" alt="Nos services, notre profesionnalisme">
               <div class="carte-texte">
                   <h3 class="carte-titre"> {{ Service.getTitre() }} </h3>
-                  <p class="carte-description"> {{ Service.getDescription() }}</p>
+                  {#<p class="carte-description"> {{ Service.getDescription() }}</p>#}
               </div>
           </article>
       {% endfor %}
@@ -62,17 +62,17 @@
     {#  Bloc Témoignages #}
 
     <article class="bloctemoignages">
-          <h2 class="titretemoignage"> VOS TEMOIGNAGES </h2>
+        <h2 class="titretemoignage"> VOS TEMOIGNAGES </h2>
     <div class="temoignage">
         {% for Temoignage in Temoignage %}
-            <div class="boite-etoiles">
+          <div class="boite-etoiles">
               {% for i in 1..Temoignage.note %}
                 <span class="etoile">&#9733;</span>
               {% endfor %}
-            </div>
-            <span class="nomtemoignage"> {{ Temoignage.getNom() }} - {{ Temoignage.getJourpublication|format_date('long', locale='fr')}}</span> 
-            <span class="commentaire"> {{ Temoignage.getCommentaire() }}</span><br>
-        {% endfor %}          
+          </div>
+          <span class="nomtemoignage"> {{ Temoignage.getNom() }} - {{ Temoignage.getJourpublication|format_date('long', locale='fr')}}</span> 
+          <span class="commentaire"> {{ Temoignage.getCommentaire() }}</span><br>
+        {% endfor %}       
     </div>
         {{ knp_pagination_render(Temoignage) }}
     </article>
@@ -88,7 +88,3 @@
     </article>
 
 {% endblock %}
-
-
-
-

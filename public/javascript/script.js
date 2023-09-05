@@ -34,7 +34,7 @@ etoiles.forEach((label, index) => {
     });
 });
 
-// Affichage de la valeur des éléments du filtre de recherch des véhicules
+// Affichage de la valeur des éléments du filtre de recherche des véhicules
 
 const prixInput = document.getElementById("Prix");
 const kilometrageInput = document.getElementById("kilométrage");
@@ -70,7 +70,7 @@ boutonFiltrer.addEventListener('click', () => {
     const kilometrageValeur = document.getElementById('kilométrage').value;
     const anneeValeur = document.getElementById('années').value;
 
-    // Requête AJAX
+    // Requête AJAX pour les véhicules 
     const xhr = new XMLHttpRequest();
 
     xhr.onreadystatechange = function () {
@@ -83,14 +83,14 @@ boutonFiltrer.addEventListener('click', () => {
                     imageElement.classList.add('imageFile');
                     imageElement.alt = 'Des occasions en or à saisir dès maintenant';
                     imageElement.src = annonce.imageFile ? annonce.imageFile : '';
-                    imageElement.dataset.image = annonce.imageFile; // Ajoutez l'URL en tant qu'attribut data
+                    imageElement.dataset.image = annonce.imageFile; 
                     
                     const article = document.createElement('article');
-                    article.classList.add('carte-service'); // Ajout de la classe pour l'article
+                    article.classList.add('carte-service'); 
                     article.appendChild(imageElement);
 
                     const divCarteAnnonce = document.createElement('div');
-                    divCarteAnnonce.classList.add('carte-annonce'); // Ajout de la classe pour la div
+                    divCarteAnnonce.classList.add('carte-annonce'); 
                     divCarteAnnonce.innerHTML = `
                         <h3 class="carte-titre">${annonce.titre}</h3>
                         <p>${annonce.infotechniques}</p>
@@ -103,7 +103,6 @@ boutonFiltrer.addEventListener('click', () => {
                     annonceDiv.appendChild(article);
                 });
             } else {
-                // Gérer les erreurs
             }
         }
     };
@@ -112,8 +111,3 @@ boutonFiltrer.addEventListener('click', () => {
     xhr.open('GET', url, true);
     xhr.send();
 });
-
-
-
-
-
