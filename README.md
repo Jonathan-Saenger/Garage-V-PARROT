@@ -16,6 +16,7 @@ Les documents annexes sont disponibles dans le dossier ANNEXES :
 <li>Charte graphique</li>
 <li>Manuel d'utilisation</li>
 <li>Documentation technique</li>
+<li> Requête SQL</li>
 </ul>
 
 <h2> Pré-requis avant l'exécution locale du projet </h2>
@@ -60,7 +61,7 @@ symfony doctrine:migrations:migrate
 **Créer le compte Admin de Vincent Parrot :** 
 
 ``` 
-php bin/console dbal:run-sql "INSERT INTO user (id, email, roles, password, nom, prenom) VALUES (NULL, 'vincentparrot@vparrot.com', '[\"ROLE_ADMIN\"]', '\$2y\$13\$98WQ3hxd/J0P7YthyL9gXeeM4pR/iheiwKWp20Gd/gXBAbUJclYqO', 'Parrot', 'Vincent');"
+symfony console dbal:run-sql "INSERT INTO user (id, email, roles, password, nom, prenom) VALUES (NULL, 'vincentparrot@vparrot.com', '[\"ROLE_ADMIN\"]', '\$2y\$13\$98WQ3hxd/J0P7YthyL9gXeeM4pR/iheiwKWp20Gd/gXBAbUJclYqO', 'Parrot', 'Vincent');"
 ```
 
 ATTENTION : les passwords figurants dans l'application et la base de données doivent systématiquement être hashés. L'application les hashe automatiquement. <br>
