@@ -45,7 +45,7 @@ vous pouvez la commenter (en ajoutant # devant) ou directement la remplacer par 
 au préalable. Les étapes suivantes vous expliquent comment procéder si vous utilisez votre propre base de données. 
 
 **Configuration de la base de données :** (à défaut d'utilisation de la base de données déjà présente)<br>
-Dans le fichier .env au sein du répertoire racine du projet, configurez les identifiants de votre base de données : <br>
+Dans le fichier .env.local au sein du répertoire racine du projet, configurez les identifiants de votre base de données : <br>
 Exemple : DATABASE_URL="(votre base de données)"<br>
 
 **Pour créer la base de données, effectuez la commande :** <br>
@@ -63,6 +63,8 @@ symfony doctrine:migrations:migrate
 ``` 
 symfony console dbal:run-sql "INSERT INTO user (id, email, roles, password, nom, prenom) VALUES (NULL, 'vincentparrot@vparrot.com', '[\"ROLE_ADMIN\"]', '\$2y\$13\$98WQ3hxd/J0P7YthyL9gXeeM4pR/iheiwKWp20Gd/gXBAbUJclYqO', 'Parrot', 'Vincent');"
 ```
+Login : vincentparrot@vparrot.com<br>
+Password : Vincent3508;/ParrotAdmin<br>
 
 ATTENTION : les passwords figurants dans l'application et la base de données doivent systématiquement être hashés. L'application les hashe automatiquement. <br>
 A défaut, vous pouvez les hasher manuellement avec la commande : 
