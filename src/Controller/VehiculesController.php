@@ -87,13 +87,16 @@ class VehiculesController extends AbstractController
         $anneeValeur = $request->query->get('annee');
         $prixValeur = $request->query->get('prix');
         $kilometrageValeur = $request->query->get('kilometrage');
-        
+    
         $annonceFiltre = $AnnonceRepository->findFiltre($anneeValeur, $prixValeur, $kilometrageValeur);
-        
+    
         $annoncesArray = [];
         foreach ($annonceFiltre as $annonce) {
+            $imageFile = $annonce->getImageFile() ? $uploaderHelper->asset($annonce, 'imageFile') : '/images/annonce/' . $annonce->getImageFile();
+    
             $annoncesArray[] = [
-                'imageFile' => $annonce->getImageFile() ? $uploaderHelper->asset($annonce, 'imageFile') : '/images/annonce/' . $annonce->getImageFile(),                'titre' => $annonce->getTitre(),
+                'imageFile' => $imageFile,
+                'titre' => $annonce->getTitre(),
                 'infotechniques' => $annonce->getInfotechniques(),
                 'annee' => $annonce->getAnnee(),
                 'carburant' => $annonce->getCarburant(),

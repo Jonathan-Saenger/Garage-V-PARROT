@@ -11,7 +11,7 @@ Je vous souhaite une excellente navigation !
 
 Dépôt du projet Garage 
 
-Les documents annexes sont disponibles dans le dossier ANNEXES : 
+Les documents suivants sont disponibles dans le dossier ANNEXES : 
 <ul>
 <li>Charte graphique</li>
 <li>Manuel d'utilisation</li>
@@ -25,6 +25,7 @@ Installation de XAMPP (version 8.2.4) et démarrage des modules Apache & MySQL <
 Installation de PHP (version 8.2.4 utilisée dans ce projet) <br>
 Installation de Composer qui est un gestionnaire de dépendances <br>
 Installation de Doctrine
+Mettre en place un gestionnaire de base de données (PhpMyAdmin)
 
 <h2> Récupération du projet depuis le dépôt distant Github </h2>
 
