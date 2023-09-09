@@ -63,17 +63,17 @@
 
     <article class="bloctemoignages">
         <h2 class="titretemoignage"> VOS TEMOIGNAGES </h2>
-    <div class="temoignage">
-        {% for Temoignage in Temoignage %}
-          <div class="boite-etoiles">
-              {% for i in 1..Temoignage.note %}
-                <span class="etoile">&#9733;</span>
-              {% endfor %}
-          </div>
-          <span class="nomtemoignage"> {{ Temoignage.getNom() }} - {{ Temoignage.getJourpublication|format_date('long', locale='fr')}}</span> 
-          <span class="commentaire"> {{ Temoignage.getCommentaire() }}</span><br>
-        {% endfor %}       
-    </div>
+            <div class="temoignage">
+                {% for Temoignage in Temoignage %}
+                  <div class="boite-etoiles">
+                      {% for i in 1..Temoignage.note %}
+                        <span class="etoile">&#9733;</span>
+                      {% endfor %}
+                  </div>
+                  <span class="nomtemoignage"> {{ Temoignage.getNom() }} - {{ Temoignage.getJourpublication|format_date('long', locale='fr')}}</span> 
+                  <span class="commentaire"> {{ Temoignage.getCommentaire() }}</span><br>
+                {% endfor %}  
+              </div>     
         {{ knp_pagination_render(Temoignage) }}
     </article>
 

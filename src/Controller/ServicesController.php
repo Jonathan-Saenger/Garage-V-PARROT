@@ -8,7 +8,6 @@ use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Horaire;
 use App\Entity\Service;
 use App\Repository\HoraireRepository;
-use APP\Repository\ServiceRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 class ServicesController extends AbstractController

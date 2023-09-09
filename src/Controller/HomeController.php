@@ -3,18 +3,14 @@
 namespace App\Controller;
 
 use App\Entity\Horaire;
-use App\Entity\Service;
-use App\Entity\Temoignage;
 use App\Repository\HoraireRepository;
 use App\Repository\ServiceRepository;
 use App\Repository\TemoignageRepository;
-use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ManagerRegistry;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class HomeController extends AbstractController
@@ -40,13 +36,12 @@ class HomeController extends AbstractController
         $PaginationTemoignage = $paginatorInterface->paginate(
             $TemoignageRepository->paginationQueryTemoignage(),
             $request->query->get('page', 1),
-            1
+            2
         );
 
         return $this->render('home/index.html.twig', [
             'controller_name' => ' Garage V.PARROT',
             'Horaires' => $Horaires,
-            //'Services' => $Services,
             'Pagination' => $Pagination,
             'Temoignage' => $PaginationTemoignage,
 
