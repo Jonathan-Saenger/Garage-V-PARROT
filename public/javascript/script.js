@@ -70,8 +70,8 @@ boutonFiltrer.addEventListener('click', () => {
     const kilometrageValeur = document.getElementById('kilométrage').value;
     const anneeValeur = document.getElementById('années').value;
 
-    // Requête AJAX pour les véhicules 
-    const xhr = new XMLHttpRequest();
+// Requête AJAX pour les véhicules 
+const xhr = new XMLHttpRequest();
 
     xhr.onreadystatechange = function () {
         if (xhr.readyState === XMLHttpRequest.DONE) {
@@ -81,7 +81,7 @@ boutonFiltrer.addEventListener('click', () => {
                 annonceFiltre.forEach(annonce => {
                     const imageElement = document.createElement('img');
                     imageElement.classList.add('imageFile');
-                    imageElement.alt = 'Des occasions en or à saisir dès maintenant';
+                    imageElement.alt = 'Erreur d\'affichage, veuillez nous excuser pour la gêne occasionnée';
                     imageElement.src = annonce.imageFile ? annonce.imageFile : '';
                     imageElement.dataset.image = annonce.imageFile; 
                     
@@ -103,6 +103,7 @@ boutonFiltrer.addEventListener('click', () => {
                     annonceDiv.appendChild(article);
                 });
             } else {
+                
             }
         }
     };

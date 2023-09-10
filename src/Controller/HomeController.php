@@ -36,7 +36,7 @@ class HomeController extends AbstractController
         $PaginationTemoignage = $paginatorInterface->paginate(
             $TemoignageRepository->paginationQueryTemoignage(),
             $request->query->get('page', 1),
-            2
+            1
         );
 
         return $this->render('home/index.html.twig', [
