@@ -41,18 +41,20 @@ Vous devriez voir apparaitre l'arborescence du projet au sein de votre IDE.
 ```
  cd Garage-V-Parrot
 ```
-Le lien de la base de donnée figure déjà dans le fichier .env. Cette base est uniquement créée pour le garage. A défaut, <br>
-vous pouvez la commenter (en ajoutant # devant) ou directement la remplacer par votre base de donnée dans un fichier .env.local que vous aurez créé
-au préalable. Les étapes suivantes vous expliquent comment procéder si vous utilisez votre propre base de données. 
+Vous pouvez utiliser la base de donnée créée uniquement pour ce projet en la copiant dans un fichier .env.local : 
+```
+DATABASE_URL="mysql://root:@127.0.0.1:3306/garage?serverVersion=10.4.28-MariaDB&charset=utf8mb4"
+```
+A défaut, vous pouvez la commenter dans le fichier .env (en ajoutant # devant) puis la remplacer par votre base de donnée dans un fichier .env.local que vous aurez créé au préalable. Les étapes suivantes vous expliquent comment procéder si vous utilisez votre propre base de données. 
 
-**Configuration de la base de données :** (à défaut d'utilisation de la base de données déjà présente)<br>
-Dans le fichier .env.local au sein du répertoire racine du projet, configurez les identifiants de votre base de données : <br>
-Exemple : DATABASE_URL="(votre base de données)"<br>
-
-**Pour créer la base de données, effectuez la commande :** <br>
+**Pour créer la base de données, effectuez la commande :** (à défaut d'utilisation de la base de données déjà présente) <br>
 ``` 
 symfony doctrine:database:create
 ```
+
+**Configuration de la base de données :** <br>
+Dans le fichier .env.local au sein du répertoire racine du projet, configurez les identifiants de votre base de données : <br>
+Exemple : DATABASE_URL="(votre base de données)"<br>
 
 **Ensuite, pour mettre à jour la base de données locale, effectuez les migrations avec la commande :** 
 ```
@@ -86,9 +88,17 @@ Pour lancer le serveur de développement, tapez l'invite de commande :
 <h2> Configuration de la boite mail </h2>
 
 Pour tester la boite mail dans un environnement local : <br>
-Créer un fichier .env.local et ajouter la ligne suivante pour pouvoir vous connecter à la boite mail de l'application. 
+Créer un fichier .env.local et ajouter la ligne suivante pour pouvoir vous connecter à la boite mail de l'application. Utiliser les informations pour vous connecter au compte.  
 ``` 
 MAILER_DSN=smtp://96e675448063ed:c21baf9a59b215@sandbox.smtp.mailtrap.io:2525 
+```
+Login : 
+```
+vincentparrot5@gmail.com
+```
+Password :
+```
+VincentParrotGarage35;/
 ```
 
 Commentez la ligne figurant dans le fichier .env. avec # <br>
