@@ -98,7 +98,7 @@ vincentparrot5@gmail.com
 ```
 Password :
 ```
-VincentParrotGarage35;/
+VincentParrot35;/
 ```
 
 Commentez la ligne figurant dans le fichier .env. avec # <br>
