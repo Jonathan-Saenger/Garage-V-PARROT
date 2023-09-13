@@ -29,15 +29,15 @@ final class Version20230710211427 extends AbstractMigration
         $this->addSql('ALTER TABLE annonce ADD garage_id INT DEFAULT NULL');
         $this->addSql('ALTER TABLE annonce ADD CONSTRAINT FK_F65593E5C4FFF555 FOREIGN KEY (garage_id) REFERENCES garage (id)');
         $this->addSql('CREATE INDEX IDX_F65593E5C4FFF555 ON annonce (garage_id)');
-        $this->addSql('ALTER TABLE employe ADD admin_id INT DEFAULT NULL');
+        $this->addSql('ALTER TABLE employe ADD admin_id INT NOT NULL');
         $this->addSql('ALTER TABLE employe ADD CONSTRAINT FK_F804D3B9642B8210 FOREIGN KEY (admin_id) REFERENCES admin (id)');
         $this->addSql('CREATE INDEX IDX_F804D3B9642B8210 ON employe (admin_id)');
-        $this->addSql('ALTER TABLE horaire ADD admin_id INT DEFAULT NULL, ADD garage_id INT DEFAULT NULL'); // MODIFIE EN DEFAUT NULL
+        $this->addSql('ALTER TABLE horaire ADD admin_id INT NOT NULL, ADD garage_id INT DEFAULT NULL'); // MODIFIE EN DEFAUT NULL
         $this->addSql('ALTER TABLE horaire ADD CONSTRAINT FK_BBC83DB6642B8210 FOREIGN KEY (admin_id) REFERENCES admin (id)');
         $this->addSql('ALTER TABLE horaire ADD CONSTRAINT FK_BBC83DB6C4FFF555 FOREIGN KEY (garage_id) REFERENCES garage (id)');
         $this->addSql('CREATE INDEX IDX_BBC83DB6642B8210 ON horaire (admin_id)');
         $this->addSql('CREATE INDEX IDX_BBC83DB6C4FFF555 ON horaire (garage_id)');
-        $this->addSql('ALTER TABLE service ADD admin_id INT DEFAULT NULL, ADD garage_id INT DEFAULT NULL'); // MODIFIE EN DEFAUT NULL
+        $this->addSql('ALTER TABLE service ADD admin_id INT NOT NULL, ADD garage_id INT DEFAULT NULL'); // MODIFIE EN DEFAUT NULL
         $this->addSql('ALTER TABLE service ADD CONSTRAINT FK_E19D9AD2642B8210 FOREIGN KEY (admin_id) REFERENCES admin (id)');
         $this->addSql('ALTER TABLE service ADD CONSTRAINT FK_E19D9AD2C4FFF555 FOREIGN KEY (garage_id) REFERENCES garage (id)');
         $this->addSql('CREATE INDEX IDX_E19D9AD2642B8210 ON service (admin_id)');
