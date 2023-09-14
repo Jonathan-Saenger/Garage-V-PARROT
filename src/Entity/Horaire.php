@@ -24,7 +24,7 @@ class Horaire
     private ?\DateTimeInterface $heure_fermeture = null;
 
     #[ORM\ManyToOne(inversedBy: 'horaire')]
-    #[ORM\JoinColumn(nullable: false)]
+    #[ORM\JoinColumn(nullable: true)] // modification en true 
     private ?Admin $admin = null;
 
     #[ORM\ManyToOne(inversedBy: 'horaire')]
