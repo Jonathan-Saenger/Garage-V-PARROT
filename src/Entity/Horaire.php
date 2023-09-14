@@ -24,11 +24,11 @@ class Horaire
     private ?\DateTimeInterface $heure_fermeture = null;
 
     #[ORM\ManyToOne(inversedBy: 'horaire')]
-    #[ORM\JoinColumn(nullable: false)]
+    #[ORM\JoinColumn(nullable: true)]
     private ?Admin $admin = null;
 
     #[ORM\ManyToOne(inversedBy: 'horaire')]
-    #[ORM\JoinColumn(nullable: false)]
+    #[ORM\JoinColumn(nullable: true)]
     private ?Garage $garage = null;
 
     #[ORM\Column(type: Types::TIME_MUTABLE)]
