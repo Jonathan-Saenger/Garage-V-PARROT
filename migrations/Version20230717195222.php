@@ -21,7 +21,7 @@ final class Version20230717195222 extends AbstractMigration
     {
         // this up() migration is auto-generated, please modify it to your needs
         $this->addSql('ALTER TABLE annonce CHANGE photo photo LONGBLOB DEFAULT NULL');
-        $this->addSql('ALTER TABLE horaire ADD ouverture_soir TIME NOT NULL, ADD fermeture_soir TIME NOT NULL, CHANGE admin_id admin_id INT NOT NULL, CHANGE garage_id garage_id INT NOT NULL');
+        $this->addSql('ALTER TABLE horaire ADD ouverture_soir TIME DEFAULT NULL, ADD fermeture_soir TIME DEFAULT NULL, CHANGE admin_id admin_id INT DEFAULT NULL, CHANGE garage_id garage_id INT DEFAULT NULL');
         $this->addSql('ALTER TABLE temoignage CHANGE garage_id garage_id INT NOT NULL');
     }
 
