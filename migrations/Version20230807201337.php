@@ -23,8 +23,8 @@ final class Version20230807201337 extends AbstractMigration
         $this->addSql('ALTER TABLE admin ADD email VARCHAR(255) NOT NULL, ADD password VARCHAR(255) NOT NULL, DROP mail, DROP motdepasse');
         $this->addSql('ALTER TABLE employe ADD email VARCHAR(255) NOT NULL, ADD password VARCHAR(255) NOT NULL, DROP mail, DROP motdepasse');
         $this->addSql('ALTER TABLE horaire CHANGE admin_id admin_id INT DEFAULT NULL, CHANGE garage_id garage_id INT DEFAULT NULL, CHANGE heure_ouverture heure_ouverture TIME DEFAULT NULL, CHANGE heure_fermeture heure_fermeture TIME DEFAULT NULL, CHANGE ouverture_soir ouverture_soir TIME DEFAULT NULL, CHANGE fermeture_soir fermeture_soir TIME DEFAULT NULL');
-        $this->addSql('ALTER TABLE service CHANGE admin_id admin_id INT NOT NULL, CHANGE garage_id garage_id INT NOT NULL, CHANGE photo photo LONGBLOB NOT NULL');
-        $this->addSql('ALTER TABLE temoignage CHANGE garage_id garage_id INT NOT NULL');
+        $this->addSql('ALTER TABLE service CHANGE admin_id admin_id INT DEFAULT NULL, CHANGE garage_id garage_id INT DEFAULT NULL, CHANGE photo photo LONGBLOB NOT NULL');
+        $this->addSql('ALTER TABLE temoignage CHANGE garage_id garage_id INT DEFAULT NULL');
     }
 
     public function down(Schema $schema): void

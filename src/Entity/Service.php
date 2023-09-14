@@ -28,7 +28,7 @@ class Service
     private $photo = null;
 
     #[ORM\ManyToOne(inversedBy: 'service')]
-    #[ORM\JoinColumn(nullable: false)]
+    #[ORM\JoinColumn(nullable: true)] // modification true
     private ?Admin $admin = null;
 
     #[ORM\ManyToOne(inversedBy: 'service')]
