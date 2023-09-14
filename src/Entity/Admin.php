@@ -39,6 +39,9 @@ class Admin
     #[ORM\OneToMany(mappedBy: 'category', targetEntity: User::class)]
     private Collection $users;
 
+    #[ORM\OneToOne(cascade: ['persist', 'remove'])]
+    private ?Horaire $Horaire = null;
+
     public function __construct()
     {
         $this->employe = new ArrayCollection();
@@ -216,6 +219,13 @@ class Admin
                 $user->setCategory(null);
             }
         }
+
+        return $this;
+    }
+
+    public function setHoraire(?Horaire $Horaire): static
+    {
+        $this->Horaire = $Horaire;
 
         return $this;
     }
