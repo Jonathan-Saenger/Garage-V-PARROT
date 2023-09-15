@@ -28,7 +28,7 @@ class Horaire
     private ?Admin $admin = null;
 
     #[ORM\ManyToOne(inversedBy: 'horaire')]
-    #[ORM\JoinColumn(nullable: false)]
+    #[ORM\JoinColumn(nullable: true)] //modification en true 
     private ?Garage $garage = null;
 
     #[ORM\Column(type: Types::TIME_MUTABLE)]
