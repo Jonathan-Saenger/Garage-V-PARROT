@@ -33,7 +33,7 @@ class Annonce
     #[ORM\Column(length: 255)]
     private ?string $marque = null;
 
-    #[ORM\Column(type: Types::DECIMAL, precision: 6, scale: 2)]
+    #[ORM\Column(type: Types::INTEGER)]
     private ?string $prix = null;
 
     #[ORM\Column]
