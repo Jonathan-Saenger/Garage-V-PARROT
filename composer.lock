@@ -5130,7 +5130,7 @@
                 "php": ">=7.1"
             },
             "suggest": {
-                "ext-intl": "For best performance and support of other locales than \"fr\""
+                "ext-intl": "For best performance and support of other locales than \"en\""
             },
             "type": "library",
             "extra": {
