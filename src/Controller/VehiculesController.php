@@ -16,6 +16,12 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Vich\UploaderBundle\Templating\Helper\UploaderHelper;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Intl\Languages;
+
+\Locale::setDefault('en');
+$language = Languages::getName('fr');
+$language = Languages::getAlpha3Name('fra');
+
 
 class VehiculesController extends AbstractController
 {

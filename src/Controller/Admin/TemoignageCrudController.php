@@ -9,6 +9,11 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use Symfony\Component\Intl\Timezones;
+use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
+
+\Locale::setDefault('en');
+$timezone = Timezones::getName('Europe/Paris');
 
 class TemoignageCrudController extends AbstractCrudController
 {
@@ -23,7 +28,7 @@ class TemoignageCrudController extends AbstractCrudController
         yield IntegerField::new('note');
         yield TextareaField::new('commentaire');
         yield BooleanField::new('publication');
-        yield DateField::new('jourpublication','Jour de publication (à compléter)')->setFormat('dd.MM.yyyy');
+        yield DateTimeField::new('jourpublication','Jour de publication (à compléter)')->setFormat('dd.MM.yyyy');
 
     /*
     public function configureFields(string $pageName): iterable

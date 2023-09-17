@@ -8,7 +8,11 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\NumberField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use Vich\UploaderBundle\Form\Type\VichImageType;
+use Symfony\Component\Intl\Languages;
 
+\Locale::setDefault('en');
+$language = Languages::getName('fr');
+$language = Languages::getAlpha3Name('fra');
 
 class AnnonceCrudController extends AbstractCrudController
 {
