@@ -24,7 +24,7 @@ Les documents suivants sont disponibles dans le dossier ANNEXES :
 Installation de XAMPP (version 8.2.4) et démarrage des modules Apache & MySQL <br>
 Installation de PHP (version 8.2.4 utilisée dans ce projet) <br>
 Installation de Composer qui est un gestionnaire de dépendances <br>
-Installation de Doctrine
+Installation de Doctrine <br>
 Mettre en place un gestionnaire de base de données (PhpMyAdmin)
 
 <h2> Récupération du projet depuis le dépôt distant Github </h2>
@@ -87,7 +87,10 @@ Pour lancer le serveur de développement, tapez l'invite de commande :
 
 <h2> Configuration de la boite mail </h2>
 
-Pour tester la boite mail dans un environnement local : <br>
+La boite mail fonctionne pour vérifier les messages reçu depuis le site : https://mailtrap.io/signin <br>
+Puis connecter vous en utilisant les logins ci-dessus (plus de détails dans le Manuel d'utilisation).
+
+Mais vous pouvez aussi tester la boite mail dans un environnement local : <br>
 Créer un fichier .env.local et ajouter la ligne suivante pour pouvoir vous connecter à la boite mail de l'application. Utiliser les informations pour vous connecter au compte.  
 ``` 
 MAILER_DSN=smtp://96e675448063ed:c21baf9a59b215@sandbox.smtp.mailtrap.io:2525 
