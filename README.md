@@ -111,3 +111,5 @@ Commentez la ligne figurant dans le fichier .env. avec # <br>
 
 Cela permettra de tester la boite mail en environnement local.
 
+Site en ligne : http://fastandparrot-518b85cf506f.herokuapp.com/
+
