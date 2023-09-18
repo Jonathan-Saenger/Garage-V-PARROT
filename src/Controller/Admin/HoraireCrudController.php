@@ -20,10 +20,10 @@ class HoraireCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         yield TextField::new('Jour')->setRequired('false')->setPermission('ROLE_ADMIN');
-        yield TimeField::new('heure_ouverture')->setFormat('HH:mm')->setPermission('ROLE_ADMIN');
-        yield TimeField::new('heure_fermeture')->setFormat('HH:mm')->setPermission('ROLE_ADMIN');
-        yield TimeField::new('ouverture_soir')->setFormat('HH:mm')->setPermission('ROLE_ADMIN');
-        yield TimeField::new('fermeture_soir')->setFormat('HH:mm')->setPermission('ROLE_ADMIN');
+        yield TimeField::new('heure_ouverture')->setFormat('HH:mm')->setPermission('ROLE_ADMIN')->setTimezone('Europe/Paris');
+        yield TimeField::new('heure_fermeture')->setFormat('HH:mm')->setPermission('ROLE_ADMIN')->setTimezone('Europe/Paris');
+        yield TimeField::new('ouverture_soir')->setFormat('HH:mm')->setPermission('ROLE_ADMIN')->setTimezone('Europe/Paris');
+        yield TimeField::new('fermeture_soir')->setFormat('HH:mm')->setPermission('ROLE_ADMIN')->setTimezone('Europe/Paris');
     }
 
     public function configureActions(Actions $actions): Actions
