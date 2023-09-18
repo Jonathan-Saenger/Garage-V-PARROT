@@ -28,7 +28,7 @@ class TemoignageCrudController extends AbstractCrudController
         yield IntegerField::new('note');
         yield TextareaField::new('commentaire');
         yield BooleanField::new('publication');
-        yield DateField::new('jourpublication','Jour de publication (à compléter)')->setFormat('Y-MM-dd');//->setTimezone('Europe/Paris');
+        yield DateField::new('jourpublication','Jour de publication (à compléter)')->setFormat('Y-MM-dd');
 
     /*
     public function configureFields(string $pageName): iterable

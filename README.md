@@ -7,6 +7,8 @@ Vous trouverez ci-dessous l'ensemble des étapes à suivre afin de déployer dan
 Pour tester les différentes fonctionnalités de l'application, veuillez vous rendre dans le  "_manuel d'utilisation_" dans le dossier **Annexes**. Vous y trouverez notamment les identifiants de connexion de l'Admin et un employé. <br>
 Je vous souhaite une excellente navigation !
 
+Site en ligne : http://fastandparrot-518b85cf506f.herokuapp.com/
+
 <h2>Description </h2>
 
 Dépôt du projet Garage 
@@ -88,7 +90,7 @@ Pour lancer le serveur de développement, tapez l'invite de commande :
 <h2> Configuration de la boite mail </h2>
 
 La boite mail fonctionne pour vérifier les messages reçu depuis le site : https://mailtrap.io/signin <br>
-Puis connecter vous en utilisant les logins ci-dessus (plus de détails dans le Manuel d'utilisation).
+Puis connectez-vous en utilisant les logins ci-dessus (plus de détails dans le Manuel d'utilisation).
 
 Mais vous pouvez aussi tester la boite mail dans un environnement local : <br>
 Créer un fichier .env.local et ajouter la ligne suivante pour pouvoir vous connecter à la boite mail de l'application. Utiliser les informations pour vous connecter au compte.  
@@ -110,6 +112,3 @@ Commentez la ligne figurant dans le fichier .env. avec # <br>
  ```
 
 Cela permettra de tester la boite mail en environnement local.
-
-Site en ligne : http://fastandparrot-518b85cf506f.herokuapp.com/
-
