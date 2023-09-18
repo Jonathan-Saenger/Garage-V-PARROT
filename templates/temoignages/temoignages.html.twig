@@ -44,7 +44,7 @@
                     <span class="etoile">&#9733;</span>
                 {% endfor %}
                 </div>
-                <span class="nomtemoignage"> {{ Temoignage.getNom() }} - {#{{ Temoignage.getJourpublication|format_date('long', locale='fr')}}#}</span> 
+                <span class="nomtemoignage"> {{ Temoignage.getNom() }} - {{ Temoignage.getJourpublication|format_date('long', locale='fr')}}</span> 
                 <span class="commentaire"> {{ Temoignage.getCommentaire() }}</span><br>
             {% endfor %}          
         </div>
