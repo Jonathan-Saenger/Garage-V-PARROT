@@ -90,10 +90,10 @@ Pour lancer le serveur de développement, tapez l'invite de commande :
 <h2> Configuration de la boite mail </h2>
 
 La boite mail fonctionne pour vérifier les messages reçu depuis le site : https://mailtrap.io/signin <br>
-Puis connectez-vous en utilisant les logins ci-dessus (plus de détails dans le Manuel d'utilisation).
+Connectez-vous en utilisant les logins ci-dessous.
 
 Mais vous pouvez aussi tester la boite mail dans un environnement local : <br>
-Créer un fichier .env.local et ajouter la ligne suivante pour pouvoir vous connecter à la boite mail de l'application. Utiliser les informations pour vous connecter au compte.  
+Dans un fichier .env.local, ajoutez la ligne suivante pour vous connecter à la boite mail de l'application. Utiliser les logins pour vous connecter au compte et visualiser les messages reçus.
 ``` 
 MAILER_DSN=smtp://0582651c202423:6703c52f691a7d@sandbox.smtp.mailtrap.io:2525 
 ```
