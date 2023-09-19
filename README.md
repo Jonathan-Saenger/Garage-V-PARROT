@@ -95,7 +95,7 @@ Puis connectez-vous en utilisant les logins ci-dessus (plus de détails dans le 
 Mais vous pouvez aussi tester la boite mail dans un environnement local : <br>
 Créer un fichier .env.local et ajouter la ligne suivante pour pouvoir vous connecter à la boite mail de l'application. Utiliser les informations pour vous connecter au compte.  
 ``` 
-MAILER_DSN=smtp://96e675448063ed:c21baf9a59b215@sandbox.smtp.mailtrap.io:2525 
+MAILER_DSN=smtp://0582651c202423:6703c52f691a7d@sandbox.smtp.mailtrap.io:2525 
 ```
 Login : 
 ```
@@ -108,7 +108,7 @@ VincentParrot35;/
 
 Commentez la ligne figurant dans le fichier .env. avec # <br>
 ```
- #MAILER_DSN=smtp://96e675448063ed:c21baf9a59b215@sandbox.smtp.mailtrap.io:2525
+ MAILER_DSN=smtp://0582651c202423:6703c52f691a7d@sandbox.smtp.mailtrap.io:2525
  ```
 
 Cela permettra de tester la boite mail en environnement local.
