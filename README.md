@@ -11,7 +11,7 @@ Site en ligne : http://fastandparrot-518b85cf506f.herokuapp.com/
 
 Lien Trello : https://trello.com/b/WomJyiDD/projet-garage-v-parrot
 
-<h2>Description </h2>
+Lien Figma : https://www.figma.com/file/zAVlMRjJaKnjfAVGiWZvdY?type=design
 
 Dépôt du projet Garage 
 
